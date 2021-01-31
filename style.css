@@ -2,6 +2,7 @@
 @import "reset.css";
 
 /* compositions */
+@import "compositions/bottom.css";
 
 /* pages */
 @import "pages/home.css";
@@ -10,5 +11,5 @@ body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: var(--black);
-  background-color: snow;
+  background-color: var(--smoky);
 }
