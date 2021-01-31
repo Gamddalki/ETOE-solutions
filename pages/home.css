@@ -42,6 +42,9 @@
 
 .home_s {
   width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 45px;
 }
 
 .home__main {
@@ -80,21 +83,26 @@
 
 .home__serve {
   width: 70%;
-  background-color: white;
-  margin: 30px;
 }
 
 .home__news {
   width: 30%;
+  border-radius: 15px;
+  background-color: white;
+  font-size: 15px;
+}
+
+.home__but {
+  margin-left: 35px;
 }
 
 .home__buttons {
-  border: 0.5px solid var(--gray);
 }
 
 .home__con,
 .home__cont {
-  border: 0.5px solid var(--gray);
+  font-size: 15px;
+  border-radius: 15px;
 }
 
 .home__con {
@@ -102,12 +110,29 @@
   display: flex;
   justify-content: space-between;
   height: 150px;
+  background-color: white;
 }
 
 .home__cont {
   width: 50%;
 }
 
+.oracle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  border-radius: 15px;
+  margin-top: 35px;
+  background-color: white;
+  font-size: 15px;
+}
+
 .home__ora {
+  padding: 0px 35px;
   width: 30%;
+}
+
+.oracle span {
+  padding: 30px;
 }
