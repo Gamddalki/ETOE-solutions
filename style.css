@@ -1,6 +1,14 @@
 @import "variables.css";
+@import "reset.css";
 
 /* compositions */
 
 /* pages */
 @import "pages/home.css";
+
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: var(--black);
+  background-color: snow;
+}
