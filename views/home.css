@@ -1,0 +1,25 @@
+.doc-main {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.main__contents {
+  position: relative;
+}
+
+.main__background {
+  position: relative;
+  overflow: hidden;
+  width: auto;
+  height: 100vh;
+}
+
+.main__background > img {
+  position: absolute;
+  object-fit: cover;
+  vertical-align: baseline;
+  width: 100%;
+  height: 100%;
+}
+
