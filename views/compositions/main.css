@@ -1,0 +1,12 @@
+body {
+  background-color: var(--baseBackground);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+body:not(.main__title) {
+  font-family: "NanumSquare", -apple-system;
+  color: var(--black);
+}
