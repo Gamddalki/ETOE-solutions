@@ -1,0 +1,10 @@
+@import "./variables.css";
+@import "./reset.css";
+
+/* compositions */
+@import "./compositions/main.css";
+@import "./compositions/header.css";
+@import "./compositions/footer.css";
+
+/* pages */
+@import "./home.css";
