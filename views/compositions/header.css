@@ -1,0 +1,13 @@
+.doc-header {
+  position: fixed;
+  width: 100%;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  right: 0;
+  border: 0;
+  background: var(--baseBackground);
+  transition: top 0.2s ease-in-out;
+  float: left;
+}
+
