@@ -10,3 +10,12 @@ body:not(.main__title) {
   font-family: "NanumSquare", -apple-system;
   color: var(--black);
 }
+
+header {
+  font-weight: bolder;
+  text-align: center;
+}
+
+footer {
+  display: block;
+}
