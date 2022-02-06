@@ -11,6 +11,15 @@
   float: left;
 }
 
+.wrap_header {
+  height: 72px;
+  max-width: 1296px;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .header__title {
   padding: 0;
