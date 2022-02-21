@@ -1,0 +1,11 @@
+mixin info(info={})
+
+    div.info_section
+        div.inner_section
+            div.wrap_img 
+                img.img_info(src=`${info.url}`)
+            div.wrap_cont 
+                strong.tit_info #{info.tit}
+                span.txt_info #{info.txt}
+                div.info_cont 
+                    p.desc_info #{info.desc}
