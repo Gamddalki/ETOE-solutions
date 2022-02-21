@@ -1,0 +1,46 @@
+form {
+  max-width: 300px;
+  margin: 0 auto;
+  &:not(.search-form) {
+    margin-top: 100px;
+    padding: 20px;
+    border: 1px solid $midgray;
+    border-radius: 5px;
+  }
+}
+
+input {
+  all: unset;
+  display: block;
+  width: 90%;
+  margin: 0px auto;
+  padding: 8px 10px;
+  border-radius: 1px;
+  border: 1px solid $gray;
+  border-radius: 1px;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+input[type="submit"],
+.social__btn {
+  all: unset;
+  width: 90%;
+  text-align: center;
+  margin: 0px auto;
+  padding: 10px 10px;
+  border: 1px solid $gray;
+  border-radius: 1px;
+  cursor: pointer;
+  display: block;
+  background-color: $lightgray;
+  &:hover {
+    background-color: $midgray;
+  }
+}
+input[type="submit"] {
+  background-color: $midgray;
+  &:hover {
+    background-color: $gray;
+  }
+}
