@@ -1,0 +1,8 @@
+include ./detail
+
+mixin details(details=[{}])
+
+    div.info_section
+        div.inner_section
+            each detail in details 
+                +details(detail)
