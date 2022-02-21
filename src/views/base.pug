@@ -1,0 +1,15 @@
+doctype html
+html(lang="ko")
+    head
+        title 이투이솔루션즈(주)
+        link(rel="icon" sizes="32x32" href="../../img/logo.png")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css")
+        link(rel="stylesheet" href="/static/css/styles.css")
+    body 
+        include partials/header
+        main
+            section.doc-main
+                div.main__contents
+                    block content
+        include partials/footer
+        script(src="/static/js/main.js") 
