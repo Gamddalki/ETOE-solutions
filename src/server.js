@@ -4,6 +4,10 @@ import session from "express-session";
 import MongoStore from "connect-mongo";
 
 import rootRouter from "./routers/rootRouter";
+import etoeRouter from "./routers/etoeRouter";
+import solutionRouter from "./routers/solutionRouter";
+import cloudRouter from "./routers/cloudRouter";
+import careerRouter from "./routers/careerRouter";
 import usersRouter from "./routers/usersRouter";
 import videosRouter from "./routers/videosRouter";
 import { localsMiddleware } from "./middlewares";
@@ -29,6 +33,10 @@ app.use(localsMiddleware);
 app.use("/uploads", express.static("uploads"));
 app.use("/static", express.static("assets"));
 app.use("/", rootRouter);
+app.use("/etoe", etoeRouter);
+app.use("/solution", solutionRouter);
+app.use("/cloud", cloudRouter);
+app.use("/career", careerRouter);
 app.use("/users", usersRouter);
 app.use("/videos", videosRouter);
 
