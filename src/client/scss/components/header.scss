@@ -40,18 +40,40 @@ header {
     li {
       padding: 0 28px;
       line-height: 72px;
+      position: relative;
+      a {
+        display: block;
+        transition: all 0.1s;
+      }
     }
   }
   .list_sub {
     display: none;
     position: absolute;
-    top: 60px;
-    left: 4px;
-    padding: 0 24.5px;
-    background: var(--baseBackground);
+    top: 72px;
+    left: 50%;
+    padding: 0;
+    background: white;
     white-space: nowrap;
     box-sizing: border-box;
     z-index: 100;
+    transform: translate(-50%, 0);
+    border: 1px solid $white-gray;
+    li {
+      min-width: 70px;
+      padding: 0 20px;
+      line-height: 50px;
+      font-weight: 100;
+      color: $midgray;
+      border-bottom: 1px solid $white-gray;
+    }
+    li:hover {
+      font-weight: bold;
+      background-color: $white-gray;
+      a {
+        transition: 0s;
+      }
+    }
   }
 
   .header__util {
