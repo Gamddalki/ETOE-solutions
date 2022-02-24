@@ -1,0 +1,14 @@
+extends ../base
+include ../mixins/title
+include ../mixins/detail
+
+block content
+    article.content-article
+        +tit({emph:"Oracle Tech"})
+        div.det_cover
+            +tit({txt:"Oracle Database", ex:"Oracle Database는 온프레미스 및 클라우드 모두에서 업계 최고의 성능, 확장성, 안정성 및 보안을 제공하는 솔루션입니다."})
+        div.det_cover
+            +tit({txt:"Oracle Exadata", ex:"Oracle Exadata는 Oracle Database를 실행하기에 가장 적합합니다. 온프레미스, Cloud at Customer 및 Oracle Cloud 배포를 통해 비용을 최대 40%까지 낮추고 디지털 혁신을 촉진하며 다른 솔루션보다 최대 3배 빠른 실행 속도를 제공합니다."})
+        div.det_cover
+            +tit({txt:"Oracle GoldenGate", ex:"Oracle GoldenGate는 고 가용성, 재해 복구 및 제로 다운 타임 마이그레이션을 위해 기존 데이터 이동 솔루션보다 최대 6 배 빠르게 데이터를 복제하여 비즈니스 연속성을 제공합니다. 시스템 성능에 영향을주지 않고 이기종 소스와 대상간에 데이터를 동기화합니다."})
+            
