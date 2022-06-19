@@ -1,0 +1,16 @@
+{
+  "name": "etoe",
+  "version": "1.0.0",
+  "description": "The excitement of the future with EtoE",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gamddalki/ETOE-solutions.git"
+  },
+  "author": "Hannah Kim <hannahk01@naver.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gamddalki/ETOE-solutions/issues"
+  },
+  "homepage": "https://github.com/Gamddalki/ETOE-solutions#readme"
+}
