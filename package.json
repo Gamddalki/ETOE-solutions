@@ -8,9 +8,12 @@
     "url": "git+https://github.com/Gamddalki/ETOE-solutions.git"
   },
   "author": "Hannah Kim <hannahk01@naver.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Gamddalki/ETOE-solutions/issues"
   },
-  "homepage": "https://github.com/Gamddalki/ETOE-solutions#readme"
+  "homepage": "https://github.com/Gamddalki/ETOE-solutions#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
