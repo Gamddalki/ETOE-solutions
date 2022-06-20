@@ -8,6 +8,7 @@
     "url": "git+https://github.com/Gamddalki/ETOE-solutions.git"
   },
   "scripts": {
+    "dev": "nodemon --exec babel-node index.js"
   },
   "author": "Hannah Kim <hannahk01@naver.com>",
   "license": "MIT",
@@ -22,5 +23,6 @@
     "@babel/core": "^7.18.5",
     "@babel/node": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
+    "nodemon": "^2.0.16"
   }
 }
