@@ -7,10 +7,12 @@ import express from "express";
   cloud,
   contact,
   career,
-  search,
+  sitemap,
+  terms,
 } from "../controllers/rootController"; */
 
 const rootRouter = express.Router();
+
 /*
 rootRouter.get("/", home);
 rootRouter.get("/etoe", etoe);

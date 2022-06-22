@@ -7,6 +7,7 @@ import {
 } from "../controllers/rootController";
 */
 const solutionRouter = express.Router();
+
 /*
 solutionRouter.get("/middleware", middleware);
 solutionRouter.get("/support", support);
