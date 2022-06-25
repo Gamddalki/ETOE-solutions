@@ -1,20 +1,20 @@
 import express from "express";
 
-/* import {
+import {
   home,
-  etoe,
+  /* etoe,
   solution,
   cloud,
   contact,
   career,
   sitemap,
-  terms,
-} from "../controllers/rootController"; */
+  terms, */
+} from "../controllers/rootController";
 
 const rootRouter = express.Router();
 
-/*
 rootRouter.get("/", home);
+/*
 rootRouter.get("/etoe", etoe);
 rootRouter.get("/solution", solution);
 rootRouter.get("/cloud", cloud);
