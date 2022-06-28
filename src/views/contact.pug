@@ -1,0 +1,14 @@
+extends base
+include mixins/title
+include mixins/detail
+
+block content
+    article.content-article
+        +tit({emph:"컨택트", txt:"Contact"})
+        div.det_cover
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.5561186022437!2d127.02641021564664!3d37.49479988599025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca131037150b3%3A0x8d2482c2d4cd8bf1!2z64yA7Jqw64-E7JSo7JeQ67mbMg!5e0!3m2!1sko!2skr!4v1645709539485!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            div.wrap_cont 
+                strong.tit_info Our Headquarters:
+                span.txt_info A.06621 서울시 서초구 강남대로 359 대우도씨에빛2차 1902호 T.+82·(0)2·402·4222
+                div.info_cont 
+                    p.desc_info 강남역 5번 출구 진출 후 10미터 앞 KT매장을 지나, 우측 대우도씨에빛2차 건물로 진입
