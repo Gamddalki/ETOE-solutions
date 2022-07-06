@@ -14,6 +14,7 @@ const logger = morgan("dev");
 app.set("view engine", "pug");
 app.set("views", process.cwd() + "/src/views");
 app.use(logger);
+app.use("/assets", express.static("assets"));
 app.use("/", rootRouter);
 app.use("/etoe", etoeRouter);
 app.use("/solution", solutionRouter);
