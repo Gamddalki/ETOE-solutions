@@ -1,0 +1,50 @@
+.det_cover {
+  margin: 60px 0;
+  display: flex;
+}
+
+.det_section {
+  width: 270px;
+  height: 270px;
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 2px 5px 40px 0 rgb(0 0 0 / 9%);
+  text-align: left;
+}
+
+.wrap_det {
+  max-width: 270px;
+  overflow: hidden;
+  position: relative;
+  flex: 1;
+  box-sizing: border-box;
+  background-color: #4f97da;
+  padding: 20px;
+  strong {
+    display: block;
+    font-size: 25px;
+    line-height: 52px;
+    font-weight: bold;
+    color: white;
+    word-break: keep-all;
+  }
+}
+
+.det_cont {
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  position: absolute;
+  p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 14px;
+    line-height: 24px;
+    color: $black;
+    word-break: keep-all;
+  }
+}
