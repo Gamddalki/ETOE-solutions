@@ -1,0 +1,13 @@
+extends ../base
+include ../mixins/title
+include ../mixins/detail
+
+block content
+    article.content-article
+        +tit({emph:"Oracle Middleware"})
+        div.det_cover
+            +tit({txt:"Oracle WebLogic Server", ex:"Oracle WebLogic Server는 온프레미스 및 클라우드에서 Java와 같은 엔터프라이즈 애플리케이션을 개발, 배포 및 실행하기 위한 통합되고 확장 가능한 플랫폼입니다. WebLogic 서버는 Java Oracle Coherence(EE) 및 Jakarta EE의 강력하고 성숙하며 확장 가능한 구현을 제공합니다."})
+        div.det_cover
+            +tit({txt:"Oracle Coherence In-Memory Data Grid", ex:"Oracle Coherence In-Memory Data Grid는 온프레미스 및 클라우드 환경에서 사용하는 세계 1위의 분산 캐싱 솔루션입니다."})
+        div.det_cover
+            +tit({txt:"Oracle Tuxedo", ex:"Oracle Tuxedo는 C, C ++, COBOL, Java 및 동적 언어 애플리케이션을위한 최고의 애플리케이션 서버입니다. Oracle Tuxedo는 미션 크리티컬 애플리케이션을 개발, 배포 및 관리 할 수있는 고도로 안정적이고 선형적으로 확장 가능한 플랫폼을 제공합니다."})
