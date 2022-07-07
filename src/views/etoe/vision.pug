@@ -1,8 +1,10 @@
 extends ../base
-
+include ../mixins/info
 include ../mixins/title
 
 block content
     article.content-article
         +tit({emph:"비전", txt:"지속적인 기술 개발과 변화의 노력으로 IT기술을 선도하는 기업"})
-        
+        +info({url:"https://cdn.pixabay.com/photo/2020/11/25/15/30/smileys-5776137_960_720.jpg", tit:"끝에서부터 끝까지", txt:"고객의 Database 운영을 넘어, 모든 정보 관리를 함께 합니다."})
+        +info({url:"https://cdn.pixabay.com/photo/2020/11/25/15/30/smileys-5776137_960_720.jpg", tit:"안정적인 운영", txt:"이투이솔루션즈와 함께라면, 고객의 데이터는 빠르고, 안정되게 운영 됩니다."})
+        +info({url:"https://cdn.pixabay.com/photo/2020/11/25/15/30/smileys-5776137_960_720.jpg", tit:"색다른 관리", txt:"DB 운영을 넘은 데이터 관리, 이투이솔루션즈가 함께 합니다."})
