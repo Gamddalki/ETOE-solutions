@@ -8,8 +8,8 @@
     "url": "git+https://github.com/Gamddalki/ETOE-solutions.git"
   },
   "scripts": {
-    "dev": "nodemon --exec babel-node src/server.js",
-    "assets": "webpack --config webpack.config.js"
+    "dev": "nodemon",
+    "assets": "webpack"
   },
   "author": "Hannah Kim <hannahk01@naver.com>",
   "license": "MIT",
