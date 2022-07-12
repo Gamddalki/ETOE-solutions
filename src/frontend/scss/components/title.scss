@@ -20,3 +20,21 @@
     display: block;
   }
 }
+
+.tit_info {
+  display: block;
+  margin-top: 35px;
+  padding-bottom: 30px;
+  .det_tit {
+    font-size: 15px;
+    line-height: 27px;
+  }
+  a {
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-position: under;
+    :hover {
+      color: $main-color;
+    }
+  }
+}
