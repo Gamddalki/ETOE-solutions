@@ -1,5 +1,5 @@
 .det_cover {
-  margin: 60px 0;
+  margin-bottom: 60px;
   display: flex;
 }
 
@@ -46,5 +46,50 @@
     line-height: 24px;
     color: $gray;
     word-break: keep-all;
+  }
+}
+
+.btn_section {
+  width: 200px;
+  height: 55px;
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 2px 5px 40px 0 rgb(0 0 0 / 9%);
+  text-align: center;
+  a {
+    :hover {
+      background-color: $mid-color;
+    }
+  }
+}
+
+.wrap_btn {
+  max-width: 200px;
+  overflow: hidden;
+  position: relative;
+  flex: 1;
+  box-sizing: border-box;
+  background-color: $serve-color;
+  padding: 20px 0px;
+  p {
+    display: block;
+    font-size: 14px;
+    color: white;
+    word-break: keep-all;
+  }
+}
+
+.det_inner {
+  overflow: hidden;
+  margin: 0 auto;
+  text-align: left;
+  strong {
+    font-size: 20px;
+  }
+  span {
+    font-size: 15px;
+    line-height: 27px;
+    color: $gray;
   }
 }
