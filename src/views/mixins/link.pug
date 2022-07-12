@@ -5,6 +5,6 @@ mixin link(link={})
         span.txt_tit #{link.tit}
     div.tit_info
         span.det_tit #{link.frt}
-        a(href="#{link.src}")
+        a(href=link.src, target='_blank')
             span.det_tit #{link.pnt}
         span.det_tit #{link.bck}
