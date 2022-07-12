@@ -1,18 +1,23 @@
 extends ../base
 include ../mixins/link
-include ../mixins/detail
+include ../mixins/button
 
 block content
     article.content-article
         +link({emph:"클라우드 서비스", tit:"Oracle Cloud Service", frt:"Oracle Cloud의 클라우드 서비스는 퍼블릭/프라이빗 클라우드를 포괄하며 애플리케이션, 미들웨어, 데이터베이스, 서버, 스토리지, 네트워킹 및 관련 운영 체계, 가상화 소프트웨어 등 광범위한 오라클 제품 기능으로의 확장이 가능합니다. 이투이솔루션즈는 오라클의 협력사로서 20여 년간 축적한 오라클 인프라 분야 전문성을 바탕으로 오라클 클라우드 파트너로서 최적화된 ", pnt:"기업용 클라우드 서비스", bck:"를 제공합니다.", src:"https://www.oracle.com/kr/cloud/"})
         div.det_cover
-            +det({tit:"SELF-DRIVING", desc:"몇 번의 클릭 만으로 손쉬운 Provisioning ∙ 보안, 모니터링, 백업, 복구, 문제 해결 ∙ 실행 중 자동으로 업그레이드 및 패치 ∙ 자체 튜닝을 위한 머신 러닝 적용"})
-            +det({tit:"SELF-SECURING", desc:"외부 공격과 악의적 내부 사용자들로부터 자동으로 데이터베이스를 보호 ∙ 모든 데이터의 자동 암호화, Oracle Data Safe ∙ 자동 보안 패치"})
-            +det({tit:"SELF-REPAIRING", desc:"모든 다운타임으로부터 자동화된 보호 ∙ AI를 이용해 전례 없는 수준의 신뢰성과 성능 제공 ∙ 95.995% 가용성"})
+            +btn({tit:"클라우드 컴퓨팅 알아보기", src:"https://www.oracle.com/kr/cloud/what-is-cloud-computing/"})
         +link({tit:"서비스형 인프라 (IaaS)", pnt:"클라우드 IaaS", bck:"는 퍼블릭 클라우드, 프라이빗 클라우드 또는 하이브리드 클라우드에서 컴퓨팅 리소스가 클라우드에서 호스팅 되는 인프라 사용의 클라우드 컴퓨팅 서비스 모델의 한 유형입니다. 기업은 IaaS 모델을 사용하여 온프레미스 또는 코로케이션 데이터 센터 일부 또는 전부를 클라우드 공급자가 소유하고 관리하는 클라우드로 전환할 수 있습니다. 이러한 비용 효율적 인프라 요소에는 컴퓨팅, 네트워크 및 스토리지 하드웨어와 기타 구성 요소 및 소프트웨어가 포함될 수 있습니다.", src:"https://www.oracle.com/kr/cloud/what-is-iaas/"})
+        div.det_cover
+            +btn({tit:"클라우드 가상화 알아보기", src:"https://www.oracle.com/kr/virtualization/virtualbox/"})
+            +btn({tit:"클라우드 관리 알아보기", src:"https://www.oracle.com/kr/manageability/"})
         +link({tit:"서비스형 플랫폼 (PaaS)", pnt:"클라우드 PaaS", bck:"는 디지털 시대에 온프레미스 또는 클라우드에서 최신 애플리케이션을 구축하고 관리하기 위한 서비스 세트입니다. PaaS는 투명한 가격 및 턴키 프로비저닝에서 주문형 확장성 및 재해 복구에 이르기까지 클라우드 컴퓨팅의 모든 기본 이점을 제공하며, 모두 사용하기 쉬운 대시보드를 통해 일관된 방식으로 관리됩니다. 결과적으로 기업은 IT 운영 표준화 및 단순화, 즉시 사용 가능한 솔루션으로 비즈니스 혁신 가속화, 운영, 보안 및 거버넌스 위험 감소 등을 수행할 수 있습니다.", src:"https://www.oracle.com/kr/cloud/what-is-paas/"})
         div.det_cover
-            +det({tit:"가용성", desc:"오라클 데이터베이스를 제공하는 서비스 비용과 운영측면에서 유리한 멀티 테넌트 옵션 포함"})
-            +det({tit:"보안", desc:"자동화된 데이터 암호화를 통해 데이터베이스 보안 요구사항을 충족 안전한 가상 클라우드 네트워크에 배포하여 외부에서의 접근을 차단 가능"})
-            +det({tit:"관리", desc:"데이터베이스에 대한 스토리지와 CPU 동적 확장이 가능 클릭 한 번으로 데이터베이스를 클라우드에 배포 가능 내구성이 높고 가용성이 우수한 저장소로 데이터베이스를 백업 가능"})
-        
+            +btn({tit:"자바 클라우드 알아보기", src:"https://www.oracle.com/kr/application-development/cloud-services/java/"})
+            +btn({tit:"비즈니스 인텔리전스 알아보기", src:"https://www.oracle.com/kr/what-is-business-intelligence/"})
+            +btn({tit:"빅데이터 알아보기", src:"https://www.oracle.com/kr/big-data/what-is-big-data/"})
+        +link({tit:"다양한 기업용 클라우드 애플리케이션"})
+        div.det_cover
+            +btn({tit:"CRM 알아보기", src:"https://www.oracle.com/kr/cx/what-is-crm/"})
+            +btn({tit:"ERP 알아보기", src:"https://www.oracle.com/kr/erp/what-is-erp/"})
+            +btn({tit:"HCM 알아보기", src:"https://www.oracle.com/kr/human-capital-management/what-is-hcm/"})
