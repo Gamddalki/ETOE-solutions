@@ -1,0 +1,30 @@
+extends ../base
+include ../mixins/title
+include ../mixins/button
+
+block content
+    article.content-article
+        +tit({emph:"데이터베이스", txt:"Oracle Database", ex:"Oracle Database는 온프레미스 및 클라우드 모두에서 업계 최고의 성능, 확장성, 안정성 및 보안을 제공하는 솔루션입니다."})
+        div.det_cover
+            div.det_inner
+                strong 제품
+                span.tit_ex Oracle Database Enterprise Edition
+                    br
+                    | Oracle Database Standard Edition 2
+            div.det_inner
+                strong 옵션
+                span.tit_ex Oracle Real Application Cluster, Oracle Active Service Guard, Oracle Partitioning,
+                    br
+                    | Oracle Tuning Pack, Oracle Diagnostics Pack, Oracle Advanced Security,
+                    br
+                    | Oracle Multitenant, Oracle Advanced Compression, Oracle Real Application Testing
+        div.det_cover
+            +btn({tit:"데이터베이스 알아보기", src:"https://www.oracle.com/kr/database/what-is-database/"})
+            +btn({tit:"데이터 웨어하우스 알아보기", src:"https://www.oracle.com/kr/database/what-is-a-data-warehouse/"})
+            +btn({tit:"데이터베이스 보안 알아보기", src:"https://www.oracle.com/kr/security/cloud-security/what-is-cloud-security/"})            
+        +tit({txt:"Oracle Exadata", ex:"Oracle Exadata는 Oracle Database를 실행하기에 가장 적합합니다. 온프레미스, Cloud at Customer 및 Oracle Cloud 배포를 통해 비용을 최대 40%까지 낮추고 디지털 혁신을 촉진하며 다른 솔루션보다 최대 3배 빠른 실행 속도를 제공합니다."})
+        div.det_cover
+            +btn({tit:"Exadata 알아보기", src:"https://www.oracle.com/kr/engineered-systems/exadata/"})
+        +tit({txt:"Oracle GoldenGate", ex:"Oracle GoldenGate는 고 가용성, 재해 복구 및 제로 다운 타임 마이그레이션을 위해 기존 데이터 이동 솔루션보다 최대 6배 빠르게 데이터를 복제하여 비즈니스 연속성을 제공합니다. 시스템 성능에 영향을 주지 않고 이기종 소스와 대상간에 데이터를 동기화합니다."})
+        div.det_cover
+            +btn({tit:"GoldenGate 알아보기", src:"https://www.oracle.com/kr/integration/goldengate/"})
