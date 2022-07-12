@@ -1,0 +1,10 @@
+mixin link(link={})
+
+    h3.tit_main
+        em.emph_tit #{link.emph}
+        span.txt_tit #{link.tit}
+    div.tit_info
+        span.det_tit #{link.frt}
+        a(href="#{link.src}")
+            span.det_tit #{link.pnt}
+        span.det_tit #{link.bck}
