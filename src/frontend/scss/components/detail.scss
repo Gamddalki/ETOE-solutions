@@ -19,7 +19,7 @@
   position: relative;
   flex: 1;
   box-sizing: border-box;
-  background-color: #4f97da;
+  background-color: $light-color;
   padding: 20px;
   strong {
     display: block;
@@ -44,7 +44,7 @@
     margin-inline-end: 0px;
     font-size: 14px;
     line-height: 24px;
-    color: $black;
+    color: $gray;
     word-break: keep-all;
   }
 }
