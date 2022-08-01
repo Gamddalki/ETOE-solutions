@@ -1,6 +1,6 @@
 .tit_main {
   display: block;
-  padding-top: 50px;
+  padding-top: 80px;
   em {
     font-weight: bold;
     font-size: 36px;
@@ -23,8 +23,7 @@
 
 .tit_info {
   display: block;
-  margin-top: 35px;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   .det_tit {
     font-size: 15px;
     line-height: 27px;
@@ -37,6 +36,11 @@
       color: $main-color;
     }
   }
+}
+
+.tit_div {
+  margin-top: 35px;
+  padding-bottom: 30px;
 }
 
 .tit_ex {
