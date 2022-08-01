@@ -32,6 +32,7 @@ header {
   .header__contents {
     text-align: center;
   }
+
   .header__contents-list {
     display: flex;
     justify-content: space-between;
@@ -47,6 +48,7 @@ header {
       }
     }
   }
+
   .list_sub {
     display: none;
     position: absolute;
