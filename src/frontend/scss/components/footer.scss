@@ -14,8 +14,11 @@ footer {
 
   .bottom__contents-list {
     display: flex;
-    justify-content: space-around;
+    justify-content: left;
     font-size: 14px;
+    li {
+      padding-left: 10px;
+    }
   }
   .txt_copyright {
     font-size: 12px;
