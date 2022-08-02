@@ -3,7 +3,8 @@ mixin his(his={})
     div.his_section
         div.inner_section
             div.wrap_img 
-                img(src=`${his.url}`)
-            div.wrap_cont 
+                div.img_center
+                    img(src=`${his.url}`, width=`${his.width}`)
+            div.wrap_cont
                 span #{his.txt}
-                strong #{his.tit}
+                h2 #{his.tit}
