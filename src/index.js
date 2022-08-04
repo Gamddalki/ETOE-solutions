@@ -6,7 +6,7 @@ import etoeRouter from "./routers/etoeRouter";
 import solutionRouter from "./routers/solutionRouter";
 import cloudRouter from "./routers/cloudRouter";
 
-const PORT = 8000;
+const PORT = 8080;
 const app = express();
 const logger = morgan("dev");
 

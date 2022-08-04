@@ -8,7 +8,7 @@
     "url": "git+https://github.com/Gamddalki/ETOE-solutions.git"
   },
   "scripts": {
-    "start": "node build/server.js",
+    "start": "node build/index.js",
     "build": "npm run build:server && npm run build:assets",
     "build:server": "babel src -d build",
     "build:assets": "webpack --mode=production",
