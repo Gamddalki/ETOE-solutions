@@ -4,8 +4,6 @@ const path = require("path");
 
 module.exports = {
   entry: "./src/frontend/js/main.js",
-  mode: "development",
-  watch: true,
   plugins: [
     new MiniCssExtractPlugin({
       filename: "css/styles.css",
