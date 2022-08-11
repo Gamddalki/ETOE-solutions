@@ -14,7 +14,8 @@
   overflow: hidden;
   width: 100vw;
   height: 100vh;
-  img {
+  img,
+  video {
     position: absolute;
     object-fit: cover;
     vertical-align: baseline;
@@ -36,7 +37,7 @@
 }
 
 .main__title-txt {
-  margin-top: 250px;
+  margin-top: 300px;
   h1 {
     width: 100%;
     text-align: center;
@@ -47,6 +48,6 @@
     line-height: 1.4;
     letter-spacing: -3.5px;
     word-spacing: -0.5px;
-    color: $black;
+    color: white;
   }
 }
