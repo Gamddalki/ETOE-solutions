@@ -2,6 +2,7 @@ import "../scss/styles.scss";
 
 import "../img/logo.png";
 import "../img/main-background.png";
+import "../img/main-background.webm";
 
 (function ($) {
   $(".header__contents-list>li").mouseover(function () {
