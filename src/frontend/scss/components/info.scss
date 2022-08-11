@@ -77,3 +77,8 @@
     word-break: keep-all;
   }
 }
+
+.img_only {
+  object-fit: cover;
+  width: 100%;
+}
