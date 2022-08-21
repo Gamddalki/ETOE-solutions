@@ -2,7 +2,6 @@ import "../scss/styles.scss";
 
 import "../img/logo.png";
 import "../img/main-background.mp4";
-import "../img/main-background.png";
 import "../img/customer.jpg";
 import "../img/solution.jpg";
 import "../img/service.jpg";
