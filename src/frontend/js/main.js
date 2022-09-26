@@ -7,6 +7,7 @@ import "../img/customer.jpg";
 import "../img/solution.jpg";
 import "../img/service.jpg";
 import "../img/consulting.jpg";
+import "../img/speclogo.png";
 
 (function ($) {
   $(".header__contents-list>li").mouseover(function () {
