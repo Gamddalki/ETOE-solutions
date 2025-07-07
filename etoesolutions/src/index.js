@@ -6,27 +6,21 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
-    font-family: 'Paperlogy-8ExtraBold';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
-    font-weight: 800;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Paperlogy-4Regular';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+    font-family: 'Pretendard';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
-    font-family: 'GmarketSansMedium';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Pretendard';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 500;
     font-style: normal;
 }
 @font-face {
-    font-family: 'GmarketSansLight';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Pretendard';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
     font-style: normal;
 }
 html, body, div, span, applet, object, iframe,
@@ -73,11 +67,9 @@ table {
 }
 *{
   box-sizing: border-box;
-  font-family: "GmarketSansLight", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 300;
+  font-family: "Pretendard", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-weight: 400;
   line-height: 1.2;
-  color: white;
 }
 a{
   text-decoration: none;
@@ -92,32 +84,7 @@ button {
     cursor: pointer;
     border: none;
     background: none;
-  }
-h1 {
-  font-family: 'Paperlogy-8ExtraBold', -apple-system, sans-serif;
-  color: white;
-  line-height: 35px;
-  font-size: 25px;
-}
-h2 {
-  font-family: 'Paperlogy-4Regular', -apple-system, sans-serif;
-  color: white;
-  line-height: 35px;
-  font-size: 25px;
-}
-h3 {
-  font-family: 'GmarketSansMedium', -apple-system, sans-serif;
-  color: white;
-  line-height: 20px;
-  font-size: 15px;
-}
-span{
-  font-family: 'GmarketSansLight', -apple-system, sans-serif;
-  color: white;
-  line-height: 20px;
-  font-size: 15px;
-}
-`;
+  }`;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
