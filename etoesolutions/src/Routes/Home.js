@@ -16,7 +16,7 @@ const BackgroundVid = styled.div`
   }
 
   div {
-    margin-top: 120px;
+    margin-top: 170px;
     h1 {
       text-align: center;
       font-size: 50px;
