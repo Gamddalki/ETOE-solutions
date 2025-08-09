@@ -33,11 +33,12 @@ function Contact() {
         </IframeWrapper>
         <TextBlock blockTitle="Headquarters">
           <span>
-            A) 06621 서울시 서초구 강남대로 359 대우도씨에빛2차 1902호 <br />
-            T) 02-402-4222 <br />
-            E) admin@etoe.co.kr <br /> <br />
-            강남역 5번 출구 진출 후 10미터 앞 KT 매장을 지나, 우측
-            대우도씨에빛2차 건물로 진입
+            A) 06621 <br /> &nbsp;&nbsp;&nbsp;&nbsp; 서울시 서초구 강남대로 359
+            대우도씨에빛2차 1901호, 1902호 <br />
+            &nbsp;&nbsp;&nbsp;&nbsp; (강남역 5번 출구 앞)
+            <br /> <br />
+            T) 02-402-4222 <br /> <br />
+            E) admin@etoe.co.kr <br />
           </span>
         </TextBlock>
       </BodyWrapper>
