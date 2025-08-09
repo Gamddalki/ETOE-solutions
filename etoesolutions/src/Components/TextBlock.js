@@ -8,7 +8,7 @@ const Texts = styled.div`
   h4 {
     font-weight: 400;
     font-size: 25px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
       font-size: 20px;
     }
