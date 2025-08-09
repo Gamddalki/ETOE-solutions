@@ -39,7 +39,7 @@ const CardContent = styled.div`
   padding: 1.5rem;
 `;
 
-const CardTitle = styled.h3`
+const CardTitle = styled.h4`
   font-size: 1.25rem;
   font-weight: 600;
   color: ${(props) => props.theme.colors.headerText};
@@ -49,13 +49,16 @@ const CardTitle = styled.h3`
 
 const CardText = styled.div`
   font-size: 0.95rem;
-  line-height: 1.6;
   color: ${(props) => props.theme.colors.headerSubText};
   text-align: left;
 
   span {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
+  }
+  b {
+    font-weight: 500;
+    font-size: 1rem;
   }
 `;
 
