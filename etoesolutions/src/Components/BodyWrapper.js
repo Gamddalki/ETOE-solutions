@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const MainContents = styled.div`
   min-height: 100vh;
-  padding: 120px 250px;
+  padding: 170px 250px;
   @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
     padding: 50px 100px;
   }
