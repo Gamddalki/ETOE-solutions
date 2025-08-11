@@ -2,12 +2,16 @@ import styled from "styled-components";
 
 const MainContents = styled.div`
   min-height: 100vh;
-  padding: 170px 250px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 170px 2rem;
+
   @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
     padding: 140px 70px;
   }
   @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
-    padding: 120px 40px;
+    padding: 110px 30px;
   }
 `;
 
@@ -19,14 +23,14 @@ const PageTitle = styled.div`
     font-size: 45px;
     margin-bottom: 7px;
     @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
-      font-size: 30px;
+      font-size: 35px;
     }
   }
   h4 {
     font-weight: 400;
     font-size: 30px;
     @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
-      font-size: 20px;
+      font-size: 25px;
     }
   }
 `;
