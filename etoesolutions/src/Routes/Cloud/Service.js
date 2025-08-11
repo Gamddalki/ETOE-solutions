@@ -1,0 +1,83 @@
+import styled from "styled-components";
+import BodyWrapper from "../../Components/BodyWrapper";
+import TextBlock from "../../Components/TextBlock";
+import ExternalLinkButton from "../../Components/ExternalLinkButton";
+
+function Service() {
+  return (
+    <>
+      <BodyWrapper pageTitle="클라우드 서비스">
+        <div>
+          <TextBlock blockTitle="Oracle Cloud Service">
+            <span>
+              Oracle Cloud의 클라우드 서비스는 퍼블릭/프라이빗 클라우드를
+              포괄하며 애플리케이션, 미들웨어, 데이터베이스, 서버, 스토리지,
+              네트워킹 및 관련 운영 체계, 가상화 소프트웨어 등 광범위한 오라클
+              제품 기능으로의 확장이 가능합니다. 이투이솔루션즈는 오라클의
+              협력사로서 20여 년간 축적한 오라클 인프라 분야 전문성을 바탕으로
+              오라클 클라우드 파트너로서 최적화된{" "}
+              <a href="https://www.oracle.com/kr/cloud/">
+                기업용 클라우드 서비스
+              </a>
+              를 제공합니다.
+            </span>
+          </TextBlock>
+          <ExternalLinkButton
+            name="클라우드 컴퓨팅 알아보기"
+            link="https://www.oracle.com/kr/database/what-is-database/"
+          ></ExternalLinkButton>
+          <TextBlock blockTitle="서비스형 인프라 (IaaS)">
+            <span>
+              <a href="https://www.oracle.com/kr/cloud/what-is-iaas/">
+                클라우드 IaaS
+              </a>
+              는 퍼블릭 클라우드, 프라이빗 클라우드 또는 하이브리드 클라우드에서
+              컴퓨팅 리소스가 클라우드에서 호스팅 되는 인프라 사용의 클라우드
+              컴퓨팅 서비스 모델의 한 유형입니다. 기업은 IaaS 모델을 사용하여
+              온프레미스 또는 코로케이션 데이터 센터 일부 또는 전부를 클라우드
+              공급자가 소유하고 관리하는 클라우드로 전환할 수 있습니다. 이러한
+              비용 효율적 인프라 요소에는 컴퓨팅, 네트워크 및 스토리지
+              하드웨어와 기타 구성 요소 및 소프트웨어가 포함될 수 있습니다.
+            </span>
+          </TextBlock>
+          <ExternalLinkButton
+            name="클라우드 가상화 알아보기"
+            link="https://www.oracle.com/kr/virtualization/virtualbox/"
+          ></ExternalLinkButton>
+          <ExternalLinkButton
+            name="클라우드 관리 알아보기"
+            link="https://www.oracle.com/kr/manageability/"
+          ></ExternalLinkButton>
+          <TextBlock blockTitle="서비스형 플랫폼 (PaaS)">
+            <span>
+              <a href="https://www.oracle.com/kr/cloud/what-is-paas/">
+                클라우드 PaaS
+              </a>
+              는 디지털 시대에 온프레미스 또는 클라우드에서 최신 애플리케이션을
+              구축하고 관리하기 위한 서비스 세트입니다. PaaS는 투명한 가격 및
+              턴키 프로비저닝에서 주문형 확장성 및 재해 복구에 이르기까지
+              클라우드 컴퓨팅의 모든 기본 이점을 제공하며, 모두 사용하기 쉬운
+              대시보드를 통해 일관된 방식으로 관리됩니다. 결과적으로 기업은 IT
+              운영 표준화 및 단순화, 즉시 사용 가능한 솔루션으로 비즈니스 혁신
+              가속화, 운영, 보안 및 거버넌스 위험 감소 등을 수행할 수 있습니다.
+            </span>
+          </TextBlock>
+          <ExternalLinkButton
+            name="자바 클라우드 알아보기"
+            link="https://www.oracle.com/cloud/java/"
+          ></ExternalLinkButton>
+          <ExternalLinkButton
+            name="비즈니스 인텔리전스 알아보기"
+            link="https://www.oracle.com/kr/what-is-business-intelligence/"
+          ></ExternalLinkButton>
+          <ExternalLinkButton
+            name="빅데이터 알아보기"
+            link="https://www.oracle.com/kr/big-data/what-is-big-data/"
+          ></ExternalLinkButton>
+        </div>
+      </BodyWrapper>
+    </>
+  );
+}
+
+export default Service;
