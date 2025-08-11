@@ -74,6 +74,19 @@ function Service() {
             name="빅데이터 알아보기"
             link="https://www.oracle.com/kr/big-data/what-is-big-data/"
           ></ExternalLinkButton>
+          <TextBlock blockTitle="다양한 기업용 클라우드 애플리케이션"></TextBlock>
+          <ExternalLinkButton
+            name="CRM 알아보기"
+            link="https://www.oracle.com/kr/cx/what-is-crm/"
+          ></ExternalLinkButton>
+          <ExternalLinkButton
+            name="ERP 알아보기"
+            link="https://www.oracle.com/kr/erp/what-is-erp/"
+          ></ExternalLinkButton>
+          <ExternalLinkButton
+            name="HCM 알아보기"
+            link="https://www.oracle.com/kr/human-capital-management/what-is-hcm/"
+          ></ExternalLinkButton>
         </div>
       </BodyWrapper>
     </>
