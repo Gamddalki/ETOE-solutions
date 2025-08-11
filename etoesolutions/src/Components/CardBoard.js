@@ -15,14 +15,14 @@ const CardBoardContainer = styled.div`
 const Card = styled.div`
   background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px ${(props) => props.theme.colors.shadow};
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 30px ${(props) => props.theme.colors.shadowHover};
   }
 `;
 

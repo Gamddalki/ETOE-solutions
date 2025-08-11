@@ -4,10 +4,10 @@ const MainContents = styled.div`
   min-height: 100vh;
   padding: 170px 250px;
   @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
-    padding: 50px 100px;
+    padding: 140px 70px;
   }
   @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
-    padding: 50px 70px;
+    padding: 120px 40px;
   }
 `;
 
@@ -19,14 +19,14 @@ const PageTitle = styled.div`
     font-size: 45px;
     margin-bottom: 7px;
     @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
-      font-size: 33px;
+      font-size: 30px;
     }
   }
   h4 {
     font-weight: 400;
     font-size: 30px;
     @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
-      font-size: 22px;
+      font-size: 20px;
     }
   }
 `;
@@ -40,6 +40,12 @@ const PageContents = styled.div`
   @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     flex-direction: column;
     gap: 15px;
+  }
+  span {
+    font-size: 18px;
+    @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+      font-size: 15px;
+    }
   }
 `;
 
