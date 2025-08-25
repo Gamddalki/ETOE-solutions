@@ -1,0 +1,195 @@
+import styled from "styled-components";
+import BodyWrapper from "../../Components/BodyWrapper";
+import TextBlock from "../../Components/TextBlock";
+import CardBoard from "../../Components/CardBoard";
+
+const SmallCardContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 3rem;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+`;
+
+const SmallCard = styled.div`
+  background: ${(props) => props.bgColor};
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px ${(props) => props.theme.colors.shadow};
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px ${(props) => props.theme.colors.shadowHover};
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    padding: 1.2rem;
+  }
+`;
+
+const SmallCardTitle = styled.h3`
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: white;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    font-size: 1.2rem;
+  }
+`;
+
+const SmallCardContent = styled.div`
+  color: white;
+  font-size: 0.9rem;
+  line-height: 1.5;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    font-size: 0.85rem;
+  }
+`;
+
+function Cloud() {
+  const cloudServiceCards = [
+    {
+      title: "DBCS",
+      subtitle: "Database Cloud Service",
+      image: "/img/cloud1.webp",
+      content: (
+        <>
+          <span>
+            업계 최고의 성능과 안전성을 지향하는 오라클 데이터 베이스를 오직
+            오라클만이 제공할 수 있는 특화된 서비스와 유연한 가격 정책으로
+            제공하는 오라클 데이터베이스 클라우드 서비스입니다. 다양한 배포
+            선택사항을 제공하며 이러한 선택사항을 통해 사용자의 사용 사례에
+            적합한 비용 및 기능 수준에서 시작할 수 있으며, 이후 시간의 흐름에
+            따른 요구사항의 변화에 맞출 수 있는 유연성을 확보하게 됩니다.
+          </span>
+        </>
+      ),
+    },
+    {
+      title: "ATP",
+      subtitle: "Autonomous Transaction Processing",
+      image: "/img/cloud2.webp",
+      content: (
+        <>
+          <span>
+            고성능 데이터베이스의 운영과 보안의 복잡성을 제거하고 미션 크리티컬
+            애플리케이션의 요구를 즉시 충족하는 클라우드 데이터베이스
+            서비스입니다.
+          </span>
+        </>
+      ),
+    },
+    {
+      title: "ADW+OAC",
+      subtitle: "Autonomous Data Warehouse & Oracle Analytics Cloud",
+      image: "/img/cloud3.webp",
+      content: (
+        <>
+          <span>
+            탄력적으로 확장되고 빠른 쿼리 성능을 제공하며 데이터베이스 관리가
+            필요 없는, 사용이 간편하고 완전히 자율적인 데이터베이스를
+            제공합니다. 또한 ADW는 Oracle의 데이터 시각화 분석 플랫폼인 Oracle
+            Analytics Cloud로 언제 어디서나 빠르고 쉽게 데이터를 분석할 수
+            있습니다.
+          </span>
+        </>
+      ),
+    },
+    {
+      title: "OCI",
+      subtitle: "Oracle Cloud Infrastructure",
+      image: "/img/cloud4.webp",
+      content: (
+        <>
+          <span>
+            퍼블릭 클라우드의 탄력성과 유용성을 온프레미스 인프라의 세분화된
+            제어, 보안 및 예측 가능성과 결합하여 고성능의 비용 효율적인 인프라
+            서비스를 제공합니다. 또한 필수 시스템의 요건을 충족하도록 설계되어
+            기존의 작업을 빠짐없이 지원할 뿐만 아니라 최신 클라우드 개발 툴까지
+            제공하므로 기업이 미래를 설계하면서 빠르게 발전할 수 있습니다.
+          </span>
+        </>
+      ),
+    },
+    {
+      title: "OMC",
+      subtitle: "Oracle Management Cloud",
+      image: "/img/cloud5.webp",
+      content: (
+        <>
+          <span>
+            애플리케이션 및 인프라를 모니터링하고 관리하기 위한 기존 솔루션과
+            관련된 인적 노력을 제거합니다. 고객은 온프레미스 환경, Oracle Cloud
+            환경, 하이브리드 클라우드 환경 및 멀티 클라우드 환경을 관리하는 데
+            적합하도록 전체 운영 데이터 세트에 대해 이러한 서비스의 다양한
+            조합을 활용할 수 있습니다.
+          </span>
+        </>
+      ),
+    },
+  ];
+
+  const autonomousFeatures = [
+    {
+      title: "SELF-DRIVING",
+      content:
+        "몇 번의 클릭 만으로 손쉬운 Provisioning ∙ 보안, 모니터링, 백업, 복구, 문제 해결 ∙ 실행 중 자동으로 업그레이드 및 패치 ∙ 자체 튜닝을 위한 머신 러닝 적용",
+      bgColor: "#1A3C6F",
+    },
+    {
+      title: "SELF-SECURING",
+      content:
+        "외부 공격과 악의적 내부 사용자들로부터 자동으로 데이터베이스를 보호 ∙ 모든 데이터의 자동 암호화, Oracle Data Safe ∙ 자동 보안 패치",
+      bgColor: "#326297",
+    },
+    {
+      title: "SELF-REPAIRING",
+      content:
+        "모든 다운타임으로부터 자동화된 보호 ∙ AI를 이용해 전례 없는 수준의 신뢰성과 성능 제공 ∙ 95.995% 가용성",
+      bgColor: "#4A7BC8",
+    },
+  ];
+
+  return (
+    <>
+      <BodyWrapper pageTitle="클라우드" pageSubtitle="Oracle Cloud">
+        <div>
+          <TextBlock blockTitle="기술 지원 방식">
+            <span>
+              업계 최고의 성능과 안전성을 지향하는 오라클 데이터 베이스를 오직
+              오라클만이 제공할 수 있는 특화된 서비스와 유연한 가격 정책으로
+              제공하는 오라클 데이터베이스 클라우드 서비스입니다. 다양한 배포
+              선택사항을 제공하며 이러한 선택사항을 통해 사용자의 사용 사례에
+              적합한 비용 및 기능 수준에서 시작할 수 있으며, 이후 시간의 흐름에
+              따른 요구사항의 변화에 맞출 수 있는 유연성을 확보하게 됩니다.
+              이투이솔루션즈는 오라클의 협력사로서 20여 년간 축적한 오라클
+              인프라 분야 전문성을 바탕으로 오라클 클라우드 파트너로서 최적화된
+              클라우드 서비스를 제공합니다.
+            </span>
+            <SmallCardContainer>
+              {autonomousFeatures.map((feature, index) => (
+                <SmallCard key={index} bgColor={feature.bgColor}>
+                  <SmallCardTitle>{feature.title}</SmallCardTitle>
+                  <SmallCardContent>{feature.content}</SmallCardContent>
+                </SmallCard>
+              ))}
+            </SmallCardContainer>
+          </TextBlock>
+
+          <TextBlock blockTitle="Oracle Cloud 서비스">
+            <CardBoard cards={cloudServiceCards} />
+          </TextBlock>
+        </div>
+      </BodyWrapper>
+    </>
+  );
+}
+
+export default Cloud;
