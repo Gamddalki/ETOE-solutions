@@ -1,8 +1,29 @@
 import styled from "styled-components";
 import BodyWrapper from "../../Components/BodyWrapper";
 import TextBlock from "../../Components/TextBlock";
+import SmallCardBoard from "../../Components/SmallCard";
 
 function Solution() {
+  const supportFeatures = [
+    {
+      title: "24x7x365",
+      content:
+        "2시간 이내 응답 / 온사이트(On-site), 전화, 이메일 등 고객사의 상황에 적합한 채널 판단 후 서비스 제공",
+      bgColor: "#1A3C6F",
+    },
+    {
+      title: "서비스",
+      content:
+        "설치, 업그레이드, 튜닝, 장애 지원, 정기 점검 (버그 리포트 및 주요 변경 사항 공유)",
+      bgColor: "#326297",
+    },
+    {
+      title: "부가 서비스",
+      content: "운영 매뉴얼 제공, 모니터링 제공, 비상 연락망 체제 지원",
+      bgColor: "#4A7BC8",
+    },
+  ];
+
   return (
     <>
       <BodyWrapper pageTitle="기술지원" pageSubtitle="Technical Support">
@@ -21,6 +42,7 @@ function Solution() {
             보증기간 완료 시점부터는 연 단위의 별도 유지 보수 계약을 통해
             최적화된 기술 지원 서비스를 제공합니다.
           </span>
+          <SmallCardBoard cards={supportFeatures} />
         </TextBlock>
       </BodyWrapper>
     </>
