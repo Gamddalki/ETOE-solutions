@@ -3,6 +3,15 @@ import BodyWrapper from "../../Components/BodyWrapper";
 import TextBlock from "../../Components/TextBlock";
 import ExternalLinkButton from "../../Components/ExternalLinkButton";
 
+const SubSection = styled.div`
+  margin: 10px 20px 0px 20px;
+  color: ${(props) => props.theme.colors.headerSubText};
+
+  div {
+    margin: 0px 10px 0px 10px;
+  }
+`;
+
 function Database() {
   return (
     <>
@@ -13,6 +22,27 @@ function Database() {
               Oracle Database는 온프레미스 및 클라우드 모두에서 업계 최고의
               성능, 확장성, 안정성 및 보안을 제공하는 솔루션입니다.
             </span>
+            <SubSection>
+              <span>• 제품</span>
+              <div>
+                <span>
+                  Oracle Database Enterprise Edition
+                  <br />
+                  Oracle Database Standard Edition 2
+                </span>
+              </div>
+            </SubSection>
+            <SubSection>
+              <span>• 옵션</span>
+              <div>
+                <span>
+                  Oracle Real Application Cluster, Oracle Active Service Guard,
+                  Oracle Partitioning, Oracle Tuning Pack, Oracle Diagnostics
+                  Pack, Oracle Advanced Security, Oracle Multitenant, Oracle
+                  Advanced Compression, Oracle Real Application Testing
+                </span>
+              </div>
+            </SubSection>
           </TextBlock>
           <ExternalLinkButton
             name="데이터베이스 알아보기"
@@ -26,6 +56,7 @@ function Database() {
             name="클라우드 보안 알아보기"
             link="https://www.oracle.com/kr/security/cloud-security/what-is-cloud-security/"
           ></ExternalLinkButton>
+
           <TextBlock blockTitle="Oracle Exadata">
             <span>
               Oracle Exadata는 Oracle Database를 실행하기에 가장 적합합니다.
