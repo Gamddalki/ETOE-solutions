@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { FiMenu, FiX, FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 const HeaderContainer = styled.header`
@@ -11,11 +10,10 @@ const HeaderContainer = styled.header`
   padding: 20px 200px;
   background: ${(props) => props.theme.colors.header};
   z-index: 25;
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  position: fixed;
   border-bottom: 1px solid ${(props) => props.theme.colors.hover};
   @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
     padding: 20px 50px;
@@ -73,7 +71,6 @@ const SubMenu = styled.div`
   margin-top: 8px;
   background: ${(props) => props.theme.colors.header};
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 16px;
   min-width: 160px;
   z-index: 20;
@@ -245,6 +242,91 @@ function Header() {
     }));
   };
 
+  const renderDesktopMenu = (menu) => {
+    const hasSubMenu = Array.isArray(menu.subItems);
+
+    if (!hasSubMenu) {
+      return (
+        <MenuItem key={menu.label}>
+          <Link to={menu.to}>
+            <MenuButton>{menu.label}</MenuButton>
+          </Link>
+        </MenuItem>
+      );
+    }
+
+    return (
+      <MenuItem key={menu.label}>
+        <MenuButton
+          onClick={() => handleMenuClick(menu.label, true)}
+          active={activeMenu === menu.label}
+        >
+          {menu.label}
+        </MenuButton>
+
+        {activeMenu === menu.label && (
+          <SubMenu>
+            {menu.subItems.map((item) => (
+              <SubMenuItem
+                key={item.label}
+                to={item.to}
+                target={item.to.startsWith("http") ? "_blank" : undefined}
+                rel={
+                  item.to.startsWith("http") ? "noopener noreferrer" : undefined
+                }
+              >
+                {item.label}
+              </SubMenuItem>
+            ))}
+          </SubMenu>
+        )}
+      </MenuItem>
+    );
+  };
+
+  const renderMobileMenu = (menu) => {
+    const hasSubMenu = Array.isArray(menu.subItems);
+
+    if (!hasSubMenu) {
+      return (
+        <MobileMenuItem key={menu.label}>
+          <MobileMenuButton as={Link} to={menu.to}>
+            {menu.label}
+          </MobileMenuButton>
+        </MobileMenuItem>
+      );
+    }
+
+    return (
+      <MobileMenuItem key={menu.label}>
+        <MobileMenuButton onClick={() => toggleMobileSubMenu(menu.label)}>
+          {menu.label}
+          {expandedMenus[menu.label] ? (
+            <FiChevronUp size={18} />
+          ) : (
+            <FiChevronDown size={18} />
+          )}
+        </MobileMenuButton>
+        {expandedMenus[menu.label] && (
+          <MobileSubMenu>
+            {menu.subItems.map((item) => (
+              <MobileSubMenuItem
+                key={item.label}
+                to={item.to}
+                target={item.to.startsWith("http") ? "_blank" : undefined}
+                rel={
+                  item.to.startsWith("http") ? "noopener noreferrer" : undefined
+                }
+              >
+                {item.label}
+              </MobileSubMenuItem>
+            ))}
+          </MobileSubMenu>
+        )}
+      </MobileMenuItem>
+    );
+  };
+
   useEffect(() => {
     const DESKTOP_WIDTH = 1024;
     const handleResize = () => {
@@ -281,54 +363,7 @@ function Header() {
         </Link>
 
         <NavWrapper ref={navRef}>
-          <Nav>
-            {menuItems.map((menu) => {
-              const hasSubMenu = Array.isArray(menu.subItems);
-
-              return (
-                <MenuItem key={menu.label}>
-                  {hasSubMenu ? (
-                    <MenuButton
-                      onClick={() => handleMenuClick(menu.label, true)}
-                      active={activeMenu === menu.label}
-                    >
-                      {menu.label}
-                      {hasSubMenu &&
-                        window.innerWidth <=
-                          `${(props) => props.theme.breakpoints.desktop}` && (
-                          <FiChevronDown size={14} />
-                        )}
-                    </MenuButton>
-                  ) : (
-                    <Link to={menu.to}>
-                      <MenuButton>{menu.label}</MenuButton>
-                    </Link>
-                  )}
-
-                  {activeMenu === menu.label && hasSubMenu && (
-                    <SubMenu>
-                      {menu.subItems.map((item) => (
-                        <SubMenuItem
-                          key={item.label}
-                          to={item.to}
-                          target={
-                            item.to.startsWith("http") ? "_blank" : undefined
-                          }
-                          rel={
-                            item.to.startsWith("http")
-                              ? "noopener noreferrer"
-                              : undefined
-                          }
-                        >
-                          {item.label}
-                        </SubMenuItem>
-                      ))}
-                    </SubMenu>
-                  )}
-                </MenuItem>
-              );
-            })}
-          </Nav>
+          <Nav>{menuItems.map((menu) => renderDesktopMenu(menu))}</Nav>
         </NavWrapper>
 
         <Hamburger
@@ -347,51 +382,7 @@ function Header() {
             <FiX />
           </MobileClose>
 
-          {menuItems.map((menu) => {
-            const hasSubMenu = Array.isArray(menu.subItems);
-            return (
-              <MobileMenuItem key={menu.label}>
-                {hasSubMenu ? (
-                  <>
-                    <MobileMenuButton
-                      onClick={() => toggleMobileSubMenu(menu.label)}
-                    >
-                      {menu.label}
-                      {expandedMenus[menu.label] ? (
-                        <FiChevronUp size={18} />
-                      ) : (
-                        <FiChevronDown size={18} />
-                      )}
-                    </MobileMenuButton>
-                    {expandedMenus[menu.label] && (
-                      <MobileSubMenu>
-                        {menu.subItems.map((item) => (
-                          <MobileSubMenuItem
-                            key={item.label}
-                            to={item.to}
-                            target={
-                              item.to.startsWith("http") ? "_blank" : undefined
-                            }
-                            rel={
-                              item.to.startsWith("http")
-                                ? "noopener noreferrer"
-                                : undefined
-                            }
-                          >
-                            {item.label}
-                          </MobileSubMenuItem>
-                        ))}
-                      </MobileSubMenu>
-                    )}
-                  </>
-                ) : (
-                  <MobileMenuButton as={Link} to={menu.to}>
-                    {menu.label}
-                  </MobileMenuButton>
-                )}
-              </MobileMenuItem>
-            );
-          })}
+          {menuItems.map((menu) => renderMobileMenu(menu))}
         </MobileMenu>
       )}
     </>
