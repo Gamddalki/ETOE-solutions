@@ -17,7 +17,7 @@ function Database() {
     <>
       <BodyWrapper pageTitle="데이터베이스" pageSubtitle="Oracle Database">
         <div>
-          <TextBlock>
+          <TextBlock firstBlock>
             <span>
               Oracle Database는 온프레미스 및 클라우드 모두에서 업계 최고의
               성능, 확장성, 안정성 및 보안을 제공하는 솔루션입니다.

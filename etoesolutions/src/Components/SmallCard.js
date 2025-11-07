@@ -9,6 +9,8 @@ const SmallCardContainer = styled.div`
   @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     grid-template-columns: 1fr;
     gap: 1rem;
+    width: 100%;
+    margin: 2rem 0;
   }
 `;
 
@@ -31,7 +33,7 @@ const SmallCard = styled.div`
 
 const SmallCardTitle = styled.h3`
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 0.8rem;
   color: white;
 
@@ -44,6 +46,7 @@ const SmallCardContent = styled.div`
   color: white;
   font-size: 0.9rem;
   line-height: 1.5;
+  font-weight: 400;
 
   @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     font-size: 0.85rem;

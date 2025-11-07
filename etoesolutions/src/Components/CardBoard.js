@@ -6,7 +6,7 @@ const CardBoardContainer = styled.div`
   gap: 2rem;
   margin: 2rem 0;
 
-  @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     justify-items: center;
@@ -21,7 +21,6 @@ const Card = styled.div`
   box-shadow: 0 4px 20px ${(props) => props.theme.colors.shadow};
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
   position: relative;
   height: 500px;
   width: 100%;
@@ -83,7 +82,7 @@ const CardContent = styled.div`
 const CardHeader = styled.div`
   .card-title {
     font-size: 2.1rem;
-    font-weight: 700;
+    font-weight: 600;
     color: white;
     margin-bottom: 0.5rem;
 
@@ -96,7 +95,7 @@ const CardHeader = styled.div`
 
   .card-subtitle {
     font-size: 1.2rem;
-    font-weight: 400;
+    font-weight: 500;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 0;
 
@@ -110,8 +109,8 @@ const CardText = styled.div`
   color: white;
 
   b {
-    font-weight: 500;
-    font-size: 1.2rem;
+    font-weight: 600;
+    font-size: 1.3rem;
     @media (max-width: 768px) {
       font-size: 1.1rem;
     }
@@ -121,7 +120,7 @@ const CardText = styled.div`
     display: block;
     margin-bottom: 0.7rem;
     font-weight: 400;
-    font-size: 0.9rem;
+    font-size: 1rem;
     @media (max-width: 768px) {
       font-size: 0.8rem;
     }

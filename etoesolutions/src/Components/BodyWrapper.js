@@ -7,29 +7,32 @@ const MainContents = styled.div`
   margin: 0 auto;
   padding: 170px 2rem;
 
-  @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     padding: 140px 70px;
   }
-  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
-    padding: 110px 30px;
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    padding: 140px 30px;
   }
 `;
 
 const PageTitle = styled.div`
   display: block;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    margin-bottom: 10px;
+  }
   h2 {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 45px;
     margin-bottom: 7px;
-    @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
+    @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
       font-size: 35px;
     }
   }
   h4 {
-    font-weight: 400;
+    font-weight: 500;
     font-size: 30px;
-    @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
+    @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
       font-size: 25px;
     }
   }

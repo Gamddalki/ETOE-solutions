@@ -6,9 +6,12 @@ import ExternalLinkButton from "../../Components/ExternalLinkButton";
 function Service() {
   return (
     <>
-      <BodyWrapper pageTitle="클라우드 서비스">
+      <BodyWrapper
+        pageTitle="클라우드 서비스"
+        pageSubtitle="Oracle Cloud Service"
+      >
         <div>
-          <TextBlock blockTitle="Oracle Cloud Service">
+          <TextBlock firstBlock>
             <span>
               Oracle Cloud의 클라우드 서비스는 퍼블릭/프라이빗 클라우드를
               포괄하며 애플리케이션, 미들웨어, 데이터베이스, 서버, 스토리지,

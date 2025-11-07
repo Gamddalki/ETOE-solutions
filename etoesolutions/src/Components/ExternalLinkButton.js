@@ -19,7 +19,7 @@ const Button = styled.a`
   }
 
   font-size: 15px;
-  @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     font-size: 13px;
   }
 `;
