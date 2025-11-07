@@ -1,89 +1,51 @@
-import styled from "styled-components";
 import BodyWrapper from "../../Components/BodyWrapper";
 import TextBlock from "../../Components/TextBlock";
-import CardBoard from "../../Components/CardBoard";
 import SmallCardBoard from "../../Components/SmallCard";
+import {
+  FiDatabase,
+  FiCloud,
+  FiHome,
+  FiServer,
+  FiSettings,
+} from "react-icons/fi";
+import HighlightsGrid from "../../Components/HighlightsGrid";
 
 function Cloud() {
-  const cloudServiceCards = [
+  const cloudServices = [
     {
+      icon: FiDatabase,
       title: "DBCS",
       subtitle: "Database Cloud Service",
-      image: "/img/cloud1.webp",
-      content: (
-        <>
-          <span>
-            업계 최고의 성능과 안전성을 지향하는 오라클 데이터 베이스를 오직
-            오라클만이 제공할 수 있는 특화된 서비스와 유연한 가격 정책으로
-            제공하는 오라클 데이터베이스 클라우드 서비스입니다. 다양한 배포
-            선택사항을 제공하며 이러한 선택사항을 통해 사용자의 사용 사례에
-            적합한 비용 및 기능 수준에서 시작할 수 있으며, 이후 시간의 흐름에
-            따른 요구사항의 변화에 맞출 수 있는 유연성을 확보하게 됩니다.
-          </span>
-        </>
-      ),
+      description:
+        "업계 최고의 성능과 안전성을 지향하는 오라클 데이터베이스를 오직 오라클만이 제공할 수 있는 특화된 서비스와 유연한 가격 정책으로 제공합니다. 다양한 배포 선택사항을 통해 사용 사례에 적합한 비용과 기능 수준에서 시작하고, 이후 변화하는 요구사항에 유연하게 대응할 수 있습니다.",
     },
     {
+      icon: FiCloud,
       title: "ATP",
       subtitle: "Autonomous Transaction Processing",
-      image: "/img/cloud2.webp",
-      content: (
-        <>
-          <span>
-            고성능 데이터베이스의 운영과 보안의 복잡성을 제거하고 미션 크리티컬
-            애플리케이션의 요구를 즉시 충족하는 클라우드 데이터베이스
-            서비스입니다.
-          </span>
-        </>
-      ),
+      description:
+        "고성능 데이터베이스 운영과 보안의 복잡성을 제거하고, 미션 크리티컬 애플리케이션의 요구를 즉시 충족하도록 설계된 클라우드 데이터베이스 서비스입니다.",
     },
     {
+      icon: FiHome,
       title: "ADW+OAC",
       subtitle: "Autonomous Data Warehouse & Oracle Analytics Cloud",
-      image: "/img/cloud3.webp",
-      content: (
-        <>
-          <span>
-            탄력적으로 확장되고 빠른 쿼리 성능을 제공하며 데이터베이스 관리가
-            필요 없는, 사용이 간편하고 완전히 자율적인 데이터베이스를
-            제공합니다. 또한 ADW는 Oracle의 데이터 시각화 분석 플랫폼인 Oracle
-            Analytics Cloud로 언제 어디서나 빠르고 쉽게 데이터를 분석할 수
-            있습니다.
-          </span>
-        </>
-      ),
+      description:
+        "탄력적으로 확장되고 빠른 쿼리 성능을 제공하는 완전 자율형 데이터베이스로, 관리 부담 없이 손쉽게 사용할 수 있습니다. Oracle Analytics Cloud와 연계해 언제 어디서나 데이터를 빠르게 분석할 수 있습니다.",
     },
     {
+      icon: FiServer,
       title: "OCI",
       subtitle: "Oracle Cloud Infrastructure",
-      image: "/img/cloud4.webp",
-      content: (
-        <>
-          <span>
-            퍼블릭 클라우드의 탄력성과 유용성을 온프레미스 인프라의 세분화된
-            제어, 보안 및 예측 가능성과 결합하여 고성능의 비용 효율적인 인프라
-            서비스를 제공합니다. 또한 필수 시스템의 요건을 충족하도록 설계되어
-            기존의 작업을 빠짐없이 지원할 뿐만 아니라 최신 클라우드 개발 툴까지
-            제공하므로 기업이 미래를 설계하면서 빠르게 발전할 수 있습니다.
-          </span>
-        </>
-      ),
+      description:
+        "퍼블릭 클라우드의 탄력성과 온프레미스 인프라의 제어·보안을 결합해 고성능·비용 효율적인 인프라 서비스를 제공합니다. 기존 업무는 물론 최신 클라우드 개발까지 지원하도록 설계되었습니다.",
     },
     {
+      icon: FiSettings,
       title: "OMC",
       subtitle: "Oracle Management Cloud",
-      image: "/img/cloud5.webp",
-      content: (
-        <>
-          <span>
-            애플리케이션 및 인프라를 모니터링하고 관리하기 위한 기존 솔루션과
-            관련된 인적 노력을 제거합니다. 고객은 온프레미스 환경, Oracle Cloud
-            환경, 하이브리드 클라우드 환경 및 멀티 클라우드 환경을 관리하는 데
-            적합하도록 전체 운영 데이터 세트에 대해 이러한 서비스의 다양한
-            조합을 활용할 수 있습니다.
-          </span>
-        </>
-      ),
+      description:
+        "애플리케이션과 인프라 모니터링·관리를 자동화하여 인적 부담을 줄이고, 온프레미스부터 하이브리드·멀티 클라우드까지 폭넓은 환경을 통합적으로 운영할 수 있도록 지원합니다.",
     },
   ];
 
@@ -92,19 +54,16 @@ function Cloud() {
       title: "SELF-DRIVING",
       content:
         "몇 번의 클릭 만으로 손쉬운 Provisioning ∙ 보안, 모니터링, 백업, 복구, 문제 해결 ∙ 실행 중 자동으로 업그레이드 및 패치 ∙ 자체 튜닝을 위한 머신 러닝 적용",
-      bgColor: "#1A3C6F",
     },
     {
       title: "SELF-SECURING",
       content:
         "외부 공격과 악의적 내부 사용자들로부터 자동으로 데이터베이스를 보호 ∙ 모든 데이터의 자동 암호화, Oracle Data Safe ∙ 자동 보안 패치",
-      bgColor: "#326297",
     },
     {
       title: "SELF-REPAIRING",
       content:
         "모든 다운타임으로부터 자동화된 보호 ∙ AI를 이용해 전례 없는 수준의 신뢰성과 성능 제공 ∙ 95.995% 가용성",
-      bgColor: "#4A7BC8",
     },
   ];
 
@@ -128,7 +87,7 @@ function Cloud() {
           </TextBlock>
 
           <TextBlock blockTitle="Oracle Cloud 서비스">
-            <CardBoard cards={cloudServiceCards} />
+            <HighlightsGrid items={cloudServices} columns={2} />
           </TextBlock>
         </div>
       </BodyWrapper>
