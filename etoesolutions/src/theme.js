@@ -13,6 +13,7 @@ const theme = {
     overlay: "rgba(0,0,0,0.7)",
     shadow: "rgba(0, 0, 0, 0.1)",
     shadowHover: "rgba(0, 0, 0, 0.15)",
+    border: "rgba(0, 0, 0, 0.1)",
     black: "#222",
   },
   breakpoints: {
