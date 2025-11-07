@@ -8,31 +8,51 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 20px 200px;
-  background: ${(props) => props.theme.colors.header};
+  background: ${(props) =>
+    props.transparent ? "rgba(255, 255, 255, 0.1)" : props.theme.colors.header};
+  backdrop-filter: ${(props) =>
+    props.transparent ? "saturate(180%) blur(8px)" : "none"};
+  color: ${(props) =>
+    props.transparent ? "#ffffff" : props.theme.colors.headerText};
   z-index: 25;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  border-bottom: 1px solid ${(props) => props.theme.colors.hover};
-  @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid
+    ${(props) =>
+      props.transparent ? "rgba(255,255,255,0.35)" : props.theme.colors.hover};
+  &:hover {
+    background: ${(props) => props.theme.colors.header};
+    backdrop-filter: none;
+    color: ${(props) => props.theme.colors.headerText};
+    border-bottom: 1px solid ${(props) => props.theme.colors.hover};
+    img {
+      filter: none;
+    }
+  }
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     padding: 20px 50px;
     z-index: 15;
   }
-  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
     padding: 20px 20px;
   }
 `;
 
 const Logo = styled.img`
   height: 32px;
+  filter: ${(props) =>
+    props.transparent ? "brightness(0) invert(1)" : "none"};
 `;
 
 const NavWrapper = styled.div`
   flex: 1;
   display: flex;
   justify-content: center;
-  @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     display: none;
   }
 `;
@@ -40,6 +60,7 @@ const NavWrapper = styled.div`
 const Nav = styled.nav`
   display: flex;
   gap: 24px;
+  color: inherit;
 `;
 
 const MenuItem = styled.div`
@@ -58,7 +79,11 @@ const MenuButton = styled.div`
   background-color: ${(props) =>
     props.active ? props.theme.colors.hover : "transparent"};
   color: ${(props) =>
-    props.active ? props.theme.colors.secondary : "inherit"};
+    props.transparent
+      ? "#ffffff"
+      : props.active
+      ? props.theme.colors.secondary
+      : "inherit"};
   display: flex;
   align-items: center;
   gap: 6px;
@@ -95,7 +120,7 @@ const Overlay = styled.div`
   height: 100vh;
   background-color: ${(props) => props.theme.colors.overlay};
   z-index: 15;
-  @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     z-index: 25;
   }
 `;
@@ -106,7 +131,7 @@ const Hamburger = styled.div`
   cursor: pointer;
   z-index: 100;
 
-  @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     display: block;
   }
 `;
@@ -206,6 +231,7 @@ function Header() {
   const [activeMenu, setActiveMenu] = useState(null);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [expandedMenus, setExpandedMenus] = useState({});
+  const [isHeaderTransparent, setIsHeaderTransparent] = useState(false);
   const navRef = useRef(null);
   const location = useLocation();
 
@@ -213,6 +239,24 @@ function Header() {
     setActiveMenu(null);
     setIsMobileOpen(false);
     setExpandedMenus({});
+    // Toggle header transparency based on route and scroll position
+    const isHome = location.pathname === "/";
+    const updateTransparency = () => {
+      if (!isHome) {
+        setIsHeaderTransparent(false);
+        return;
+      }
+      const atTop = window.scrollY < 40;
+      setIsHeaderTransparent(atTop);
+    };
+
+    updateTransparency();
+
+    if (isHome) {
+      window.addEventListener("scroll", updateTransparency, { passive: true });
+      return () => window.removeEventListener("scroll", updateTransparency);
+    }
+    return undefined;
   }, [location]);
 
   const handleMenuClick = (label, hasSubMenu) => {
@@ -357,9 +401,13 @@ function Header() {
         />
       )}
 
-      <HeaderContainer>
+      <HeaderContainer transparent={isHeaderTransparent}>
         <Link to="/">
-          <Logo src="/img/logo.png" alt="Logo" />
+          <Logo
+            src="/img/logo.png"
+            alt="Logo"
+            transparent={isHeaderTransparent}
+          />
         </Link>
 
         <NavWrapper ref={navRef}>
