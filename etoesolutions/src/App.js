@@ -16,26 +16,24 @@ import Service from "./Routes/Cloud/Service";
 
 function App() {
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <Router>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/etoe" element={<Etoe />} />
-            <Route path="/etoe/vision" element={<Vision />} />
-            <Route path="/cloud" element={<Cloud />} />
-            <Route path="/cloud/database" element={<Database />} />
-            <Route path="/cloud/service" element={<Service />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/recruit" element={<Recruit />} />
-            <Route path="/solutions" element={<Solution />} />
-            <Route path="/solutions/consulting" element={<Consulting />} />
-          </Routes>
-          <Footer />
-        </Router>
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/etoe" element={<Etoe />} />
+          <Route path="/etoe/vision" element={<Vision />} />
+          <Route path="/cloud" element={<Cloud />} />
+          <Route path="/cloud/database" element={<Database />} />
+          <Route path="/cloud/service" element={<Service />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/recruit" element={<Recruit />} />
+          <Route path="/solutions" element={<Solution />} />
+          <Route path="/solutions/consulting" element={<Consulting />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </ThemeProvider>
   );
 }
 
