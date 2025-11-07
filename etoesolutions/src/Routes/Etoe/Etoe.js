@@ -99,7 +99,7 @@ const TimelineContent = styled.div`
 
   .timeline-title {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 600;
     color: #333;
     margin-bottom: 0.5rem;
     line-height: 1.4;
@@ -124,7 +124,7 @@ function Etoe() {
     {
       title: "IBK기업은행 통합 유지 보수 계약 체결",
       image: "/img/ibk.jpg",
-      date: "2022년 12월",
+      date: "2025년 10월",
     },
     {
       title: "Oracle MP(Managed Partner) 선정",
