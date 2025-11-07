@@ -264,6 +264,9 @@ const OracleSection = styled.section`
   }
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
     padding: 50px 30px;
+    h2 {
+      font-size: 15px;
+    }
   }
 `;
 

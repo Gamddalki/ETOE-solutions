@@ -26,6 +26,9 @@ const PageTitle = styled.div`
     font-size: 45px;
     margin-bottom: 7px;
     @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+      font-size: 40px;
+    }
+    @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
       font-size: 35px;
     }
   }
@@ -33,6 +36,9 @@ const PageTitle = styled.div`
     font-weight: 500;
     font-size: 30px;
     @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+      font-size: 27px;
+    }
+    @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
       font-size: 25px;
     }
   }
@@ -46,11 +52,15 @@ const PageContents = styled.div`
   gap: 40px;
   @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     flex-direction: column;
+  }
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
     gap: 15px;
   }
   span {
     font-size: 18px;
-    @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    line-height: 1.6;
+    text-align: justify;
+    @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
       font-size: 15px;
     }
   }

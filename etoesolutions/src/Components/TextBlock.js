@@ -21,6 +21,8 @@ const Texts = styled.div`
   span {
     font-weight: 400;
     font-size: 18px;
+    line-height: 1.4;
+    text-align: justify;
     @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
       font-size: 15px;
     }
