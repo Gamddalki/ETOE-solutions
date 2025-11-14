@@ -2,8 +2,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import theme from "./theme";
 import Header from "./Components/Header";
-import Home from "./Routes/Home";
 import Footer from "./Components/Footer";
+import ScrollToTop from "./Components/ScrollToTop";
+import Home from "./Routes/Home";
 import Contact from "./Routes/Contact";
 import Recruit from "./Routes/Recruit";
 import Etoe from "./Routes/Etoe/Etoe";
@@ -18,6 +19,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
