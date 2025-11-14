@@ -1,152 +1,155 @@
 import styled from "styled-components";
+import { memo } from "react";
 
 const CardBoardContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin: 2rem 0;
+  gap: 30px;
+  margin: 3rem 0;
+  width: 100%;
 
   @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin: 2rem 0;
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    justify-items: center;
-    max-width: 400px;
-    margin: 2rem auto;
+    gap: 20px;
+    margin: 1.5rem 0;
   }
 `;
 
 const Card = styled.div`
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px ${(props) => props.theme.colors.shadow};
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  height: 500px;
-  width: 100%;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px ${(props) => props.theme.colors.shadowHover};
-  }
+  border: 1px solid ${(props) => props.theme.colors.border};
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 28px;
+  gap: 20px;
 
   @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
-    height: 400px;
-    width: 100%;
+    padding: 24px;
+    gap: 18px;
   }
-`;
 
-const CardImage = styled.div`
-  width: 100%;
-  height: 100%;
-  background-image: ${(props) => `url(${props.image})`};
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-`;
-
-const CardOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.7) 0%,
-    rgba(0, 0, 0, 0.3) 50%,
-    rgba(0, 0, 0, 0.8) 100%
-  );
-  z-index: 2;
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    padding: 20px;
+    gap: 16px;
+  }
 `;
 
 const CardContent = styled.div`
-  position: relative;
-  z-index: 3;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 1.7rem;
-  color: white;
-
-  @media (max-width: 768px) {
-    padding: 1.2rem;
-  }
+  flex: 1;
+  gap: 20px;
 `;
 
 const CardHeader = styled.div`
-  .card-title {
-    font-size: 2.1rem;
-    font-weight: 600;
-    color: white;
-    margin-bottom: 0.5rem;
-
-    @media (max-width: 768px) {
-      font-size: 1.7rem;
-      font-weight: 500;
-      margin-bottom: 0.2rem;
-    }
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-shrink: 0;
+  align-items: center;
 
   .card-subtitle {
-    font-size: 1.2rem;
+    font-size: 0.85rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 0;
+    color: ${(props) => props.theme.colors.overlay};
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
 
-    @media (max-width: 768px) {
-      font-size: 1rem;
+  .card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: ${(props) => props.theme.colors.primary};
+    margin: 0;
+    line-height: 1.4;
+
+    @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+      font-size: 1.25rem;
     }
+
+    @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+      font-size: 1.15rem;
+    }
+  }
+`;
+
+const CardIcon = styled.div`
+  width: 80px;
+  height: 80px;
+  background-image: ${(props) => `url(${props.image})`};
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+  margin-bottom: 8px;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    width: 70px;
+    height: 70px;
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    width: 60px;
+    height: 60px;
   }
 `;
 
 const CardText = styled.div`
-  color: white;
-
-  b {
-    font-weight: 600;
-    font-size: 1.3rem;
-    @media (max-width: 768px) {
-      font-size: 1.1rem;
-    }
-  }
+  color: ${(props) => props.theme.colors.headerSubText};
+  flex: 1;
 
   span {
     display: block;
-    margin-bottom: 0.7rem;
-    font-weight: 400;
-    font-size: 1rem;
-    @media (max-width: 768px) {
-      font-size: 0.8rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+
+    b {
+      font-weight: 600;
+      color: ${(props) => props.theme.colors.black};
     }
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 `;
 
 function CardBoard({ cards }) {
+  if (!cards || cards.length === 0) {
+    return null;
+  }
+
   return (
     <CardBoardContainer>
-      {cards.map((card, index) => (
-        <Card key={index}>
-          <CardImage image={card.image} />
-          <CardOverlay />
-          <CardContent>
-            <CardHeader>
-              <div className="card-title">{card.title}</div>
-              {card.subtitle && (
-                <div className="card-subtitle">{card.subtitle}</div>
-              )}
-            </CardHeader>
-            <CardText>{card.content}</CardText>
-          </CardContent>
-        </Card>
-      ))}
+      {cards.map((card, index) => {
+        const cardKey = card.id || card.title || `card-${index}`;
+
+        return (
+          <Card key={cardKey}>
+            <CardContent>
+              <CardHeader>
+                {card.subtitle && (
+                  <div className="card-subtitle">{card.subtitle}</div>
+                )}
+                <div className="card-title">{card.title}</div>
+                {card.image && <CardIcon image={card.image} />}
+              </CardHeader>
+              <CardText>{card.content}</CardText>
+            </CardContent>
+          </Card>
+        );
+      })}
     </CardBoardContainer>
   );
 }
 
-export default CardBoard;
+export default memo(CardBoard);
