@@ -12,13 +12,13 @@ const FooterDiv = styled.div`
   flex-wrap: wrap;
   padding: 50px 200px;
 
-  @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     padding: 50px;
+  }
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
     flex-direction: column;
     align-items: flex-start;
-  }
-  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
-    padding: 50px 20px;
+    padding: 50px 30px;
   }
 `;
 
@@ -26,18 +26,23 @@ const SpanDiv = styled.div`
   width: auto;
   span {
     display: block;
-    text-align: right;
     font-size: 14px;
     &.company {
       font-weight: 500;
     }
+    &.leftSpan {
+      text-align: left;
+    }
+    &.rightSpan {
+      align-items: right;
+    }
   }
 
-  @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     width: 100%;
     span {
-      text-align: left;
       font-size: 13px;
+      text-align: left;
     }
     &.leftSpan {
       margin-top: 20px;
@@ -47,8 +52,8 @@ const SpanDiv = styled.div`
       order: 1;
     }
   }
-  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
-    &.leftSpan {
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    &.rightSpan {
       margin-top: 15px;
     }
   }

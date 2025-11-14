@@ -24,7 +24,7 @@ const TwoColumn = styled.div`
     align-items: center;
   }
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
-    gap: 10px;
+    gap: 0px;
   }
 `;
 
@@ -53,6 +53,8 @@ const ImageBox = styled.div`
     }
   }
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    margin-top: -20px;
+    margin-bottom: -20px;
     img {
       height: 200px;
     }

@@ -27,7 +27,7 @@ function Service() {
           </TextBlock>
           <ExternalLinkButton
             name="클라우드 컴퓨팅 알아보기"
-            link="https://www.oracle.com/kr/database/what-is-database/"
+            link="https://www.oracle.com/kr/cloud/what-is-cloud-computing/"
           ></ExternalLinkButton>
           <TextBlock blockTitle="서비스형 인프라 (IaaS)">
             <span>
