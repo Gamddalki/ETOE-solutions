@@ -1,20 +1,33 @@
 import styled from "styled-components";
+import { memo } from "react";
+
+const GRID_COLUMNS = {
+  desktop: "repeat(auto-fill, minmax(120px, 1fr))",
+  mobile: "repeat(auto-fill, minmax(50px, 1fr))",
+};
+
+const LOGO_HEIGHT = {
+  desktop: "35px",
+  mobile: "30px",
+};
+
+const LOGO_IMAGE_MAX_HEIGHT = "30px";
 
 const LogosGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-columns: ${GRID_COLUMNS.desktop};
   gap: 30px;
   margin-top: 30px;
   padding: 20px 0;
 
   @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 20px;
     margin-top: 20px;
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    margin-top: 15px;
+    grid-template-columns: ${GRID_COLUMNS.mobile};
     gap: 15px;
   }
 `;
@@ -23,31 +36,45 @@ const LogoItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
+  height: ${LOGO_HEIGHT.desktop};
 
   img {
     max-width: 100%;
-    max-height: 40px;
+    max-height: ${LOGO_IMAGE_MAX_HEIGHT};
     width: auto;
     height: auto;
     object-fit: contain;
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
-    height: 30px;
+    height: ${LOGO_HEIGHT.mobile};
   }
 `;
 
 function CustomerLogos({ logos }) {
+  if (!logos || logos.length === 0) {
+    return null;
+  }
+
   return (
     <LogosGrid>
-      {logos.map((logo, index) => (
-        <LogoItem key={logo.path || index}>
-          <img src={logo.path} alt={logo.name || "고객사 로고"} />
-        </LogoItem>
-      ))}
+      {logos.map((logo, index) => {
+        const logoKey = logo.id || logo.path || `logo-${index}`;
+        const logoAlt = logo.name || "고객사 로고";
+
+        return (
+          <LogoItem key={logoKey}>
+            <img
+              src={logo.path}
+              alt={logoAlt}
+              loading="lazy"
+              decoding="async"
+            />
+          </LogoItem>
+        );
+      })}
     </LogosGrid>
   );
 }
 
-export default CustomerLogos;
+export default memo(CustomerLogos);
