@@ -46,6 +46,36 @@ function Etoe() {
     height: 100%;
   `;
 
+  const customerLogos = [
+    { path: "/img/ibk.jpg", name: "IBK" },
+    { path: "/img/ibklife.png", name: "IBK Life" },
+    { path: "/img/ibksystem.webp", name: "IBK System" },
+    { path: "/img/deutsch.png", name: "Deutsch" },
+    { path: "/img/globalfm.png", name: "Global FM" },
+    { path: "/img/sku.png", name: "SKU" },
+    { path: "/img/starcredit.png", name: "Star Credit" },
+    { path: "/img/gm.webp", name: "GM" },
+    { path: "/img/guc.png", name: "GUC" },
+    { path: "/img/hsu.jpg", name: "HSU" },
+    { path: "/img/ycb.jpg", name: "YCB" },
+    { path: "/img/iy.svg", name: "IY" },
+    { path: "/img/jeil.webp", name: "Jeil" },
+    { path: "/img/mirae.webp", name: "Mirae" },
+    { path: "/img/osb.png", name: "OSB" },
+    { path: "/img/pureun.png", name: "Pureun" },
+    { path: "/img/kb.jpg", name: "KB" },
+    { path: "/img/kdb.svg", name: "KDB" },
+    { path: "/img/koreaexim.svg", name: "Korea Exim" },
+    { path: "/img/kspo.png", name: "KSPO" },
+    { path: "/img/samhwa.webp", name: "Samhwa" },
+    { path: "/img/gsitm.png", name: "GSITM" },
+    { path: "/img/incheon.jpg", name: "인천공항" },
+    { path: "/img/samsung.png", name: "Samsung" },
+    { path: "/img/sk.png", name: "SK" },
+    { path: "/img/woori.svg", name: "Woori" },
+    { path: "/img/mjrk.png", name: "MJRK" },
+  ];
+
   return (
     <>
       <BodyWrapper
@@ -66,6 +96,8 @@ function Etoe() {
           <TimelineBlock>
             <Timeline items={etoeTimeline} />
           </TimelineBlock>
+          <TextBlock blockTitle="이투이솔루션즈(주) 주요 고객사">
+            <CustomerLogos logos={customerLogos} />
           </TextBlock>
         </div>
       </BodyWrapper>
