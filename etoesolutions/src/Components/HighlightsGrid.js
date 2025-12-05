@@ -78,6 +78,17 @@ const Body = styled.div`
   font-size: 0.95rem;
   line-height: 1.4;
   color: ${(props) => props.theme.colors.headerSubText};
+
+  a {
+    color: ${(props) => props.theme.colors.secondary};
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: ${(props) => props.theme.colors.primary};
+      text-decoration: underline;
+    }
+  }
 `;
 
 function HighlightsGrid({ items, columns = 2 }) {
