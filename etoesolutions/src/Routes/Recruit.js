@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import BodyWrapper from "../Components/BodyWrapper";
 import CardBoard from "../Components/CardBoard";
 
@@ -6,7 +5,7 @@ function Recruit() {
   const recruitCards = [
     {
       title: "기본을 지키는 사람",
-      image: "/img/recruit1.jpg",
+      image: "/img/basic.png",
       content: (
         <>
           <span>
@@ -23,7 +22,7 @@ function Recruit() {
     },
     {
       title: "준비된 사람",
-      image: "/img/recruit2.jpg",
+      image: "/img/ready.png",
       content: (
         <>
           <span>
@@ -40,7 +39,7 @@ function Recruit() {
     },
     {
       title: "도전하는 사람",
-      image: "/img/recruit3.jpg",
+      image: "/img/trial.png",
       content: (
         <>
           <span>

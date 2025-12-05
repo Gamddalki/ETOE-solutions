@@ -5,7 +5,7 @@ function Vision() {
   const visionCards = [
     {
       title: "고객의 감동",
-      image: "/img/heart.svg",
+      image: "/img/customer.png",
       content: (
         <>
           <span>
@@ -19,7 +19,7 @@ function Vision() {
     },
     {
       title: "최상의 솔루션",
-      image: "/img/solution.svg",
+      image: "/img/bestsolution.png",
       content: (
         <>
           <span>
@@ -34,7 +34,7 @@ function Vision() {
     },
     {
       title: "빠르고 정확한 서비스",
-      image: "/img/service.svg",
+      image: "/img/service.png",
       content: (
         <>
           <span>

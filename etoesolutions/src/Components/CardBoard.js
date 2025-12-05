@@ -81,7 +81,7 @@ const CardHeader = styled.div`
 `;
 
 const CardIcon = styled.div`
-  width: 80px;
+  width: 100%;
   height: 80px;
   background-image: ${(props) => `url(${props.image})`};
   background-size: contain;

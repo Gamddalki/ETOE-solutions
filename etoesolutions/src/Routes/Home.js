@@ -183,7 +183,7 @@ const NumCard = styled.div`
 
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
     width: 100%;
-    padding: 30px;
+    padding: 20px;
   }
 `;
 
@@ -430,25 +430,25 @@ function Home() {
         <IntroGrid>
           {[
             {
-              icon: "/img/database.svg",
+              icon: "/img/database.png",
               title: "Database",
               content:
                 "Oracle Advanced Technical Support (DBMS 설치, 정기점검, 장애처리, 데이터 복구 등)을 체계적이고 안정적으로 지원",
             },
             {
-              icon: "/img/databaseperformance.svg",
+              icon: "/img/databaseperformance.png",
               title: "Performance Tuning",
               content:
                 "데이터베이스 성능 진단 및 분석을 통한 고도화 (파티션 및 인덱스 개선, SQL 튜닝 등)와 최적화 설계 제공",
             },
             {
-              icon: "/img/dba.svg",
+              icon: "/img/dba.png",
               title: "DBA",
               content:
                 "전문 DBA의 데이터베이스 관리 및 운영, 모니터링과 더불어 백업 및 복구 전략 수립, 관리 및 운영 지침서 등 문서 제공",
             },
             {
-              icon: "/img/datamigration.svg",
+              icon: "/img/datamigration.png",
               title: "Data Migration",
               content:
                 "이행 환경 분석 및 전략 수립, 데이터 모델 및 데이터 분석, 매핑 및 검증 항목 정의를 바탕으로 이행/검증 프로그램 개발 및 테스트를 통해 안정적인 마이그레이션 진행",
@@ -508,7 +508,7 @@ function Home() {
       </NumSection>
 
       <OracleSection>
-        <img src="/img/oracle.png"></img>
+        <img src="/img/oracle.png" alt="Oracle MP(Managed Partner)"></img>
         <h2>Oracle MP(Managed Partner)</h2>
       </OracleSection>
     </>
