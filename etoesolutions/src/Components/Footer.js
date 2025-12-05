@@ -34,7 +34,14 @@ const SpanDiv = styled.div`
       text-align: left;
     }
     &.rightSpan {
-      align-items: right;
+      text-align: right;
+    }
+  }
+
+  &.rightSpan {
+    text-align: right;
+    span {
+      text-align: right;
     }
   }
 
@@ -50,6 +57,10 @@ const SpanDiv = styled.div`
     }
     &.rightSpan {
       order: 1;
+      text-align: left;
+      span {
+        text-align: left;
+      }
     }
   }
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
