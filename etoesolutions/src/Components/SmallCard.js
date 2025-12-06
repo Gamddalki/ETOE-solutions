@@ -1,3 +1,4 @@
+import { memo } from "react";
 import styled from "styled-components";
 
 const SmallCardContainer = styled.div`
@@ -27,36 +28,38 @@ const SmallCard = styled.div`
 `;
 
 const SmallCardTitle = styled.h3`
-  font-size: 1.3rem;
+  font-size: 22px;
   font-weight: 500;
-  margin-bottom: 0.8rem;
+  margin-bottom: 10px;
   color: ${(props) => props.theme.colors.primary};
 
   @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
-    font-size: 1.2rem;
+    font-size: 18px;
   }
 `;
 
 const SmallCardContent = styled.div`
   color: ${(props) => props.theme.colors.black};
-  font-size: 0.9rem;
+  font-size: 15px;
   line-height: 1.5;
   font-weight: 400;
 `;
 
-function SmallCardBoard({ cards, title }) {
+function SmallCardBoard({ cards }) {
+  if (!cards || cards.length === 0) {
+    return null;
+  }
+
   return (
-    <>
-      <SmallCardContainer>
-        {cards.map((card, index) => (
-          <SmallCard key={index}>
-            <SmallCardTitle>{card.title}</SmallCardTitle>
-            <SmallCardContent>{card.content}</SmallCardContent>
-          </SmallCard>
-        ))}
-      </SmallCardContainer>
-    </>
+    <SmallCardContainer>
+      {cards.map((card, index) => (
+        <SmallCard key={card.title || index}>
+          <SmallCardTitle>{card.title}</SmallCardTitle>
+          <SmallCardContent>{card.content}</SmallCardContent>
+        </SmallCard>
+      ))}
+    </SmallCardContainer>
   );
 }
 
-export default SmallCardBoard;
+export default memo(SmallCardBoard);

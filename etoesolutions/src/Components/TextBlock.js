@@ -1,3 +1,4 @@
+import { memo } from "react";
 import styled from "styled-components";
 
 const Texts = styled.div`
@@ -11,19 +12,22 @@ const Texts = styled.div`
 
   h4 {
     font-weight: 500;
-    font-size: 25px;
+    font-size: 30px;
     margin-bottom: 15px;
     @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+      font-size: 25px;
+    }
+    @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
       font-size: 20px;
-      margin-bottom: 10px;
     }
   }
+
   span {
     font-weight: 400;
     font-size: 18px;
-    line-height: 1.4;
+    line-height: 1.7;
     text-align: justify;
-    @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
       font-size: 15px;
     }
     a {
@@ -38,13 +42,11 @@ const Texts = styled.div`
 
 function TextBlock({ blockTitle, children, firstBlock = false }) {
   return (
-    <>
-      <Texts firstBlock={firstBlock}>
-        <h4>{blockTitle}</h4>
-        {children}
-      </Texts>
-    </>
+    <Texts firstBlock={firstBlock}>
+      {blockTitle && <h4>{blockTitle}</h4>}
+      {children}
+    </Texts>
   );
 }
 
-export default TextBlock;
+export default memo(TextBlock);

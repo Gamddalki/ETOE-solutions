@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { useLocation, Link } from "react-router-dom";
 import styled from "styled-components";
 import { FiMenu, FiX, FiChevronDown, FiChevronUp } from "react-icons/fi";
@@ -188,6 +188,8 @@ const MobileSubMenuItem = styled(Link)`
   }
 `;
 
+const isExternalLink = (url) => url.startsWith("http");
+
 const menuItems = [
   {
     label: "이투이",
@@ -259,32 +261,33 @@ function Header() {
     return undefined;
   }, [location]);
 
-  const handleMenuClick = (label, hasSubMenu) => {
+  const handleMenuClick = useCallback((label, hasSubMenu) => {
     if (!hasSubMenu) {
       setActiveMenu(null);
       return;
     }
     setActiveMenu((prev) => (prev === label ? null : label));
-  };
+  }, []);
+
+  const handleClickOutside = useCallback((event) => {
+    if (navRef.current && !navRef.current.contains(event.target)) {
+      setActiveMenu(null);
+    }
+  }, []);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (navRef.current && !navRef.current.contains(event.target)) {
-        setActiveMenu(null);
-      }
-    };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [handleClickOutside]);
 
   const isOverlayVisible = activeMenu !== null || isMobileOpen;
 
-  const toggleMobileSubMenu = (label) => {
+  const toggleMobileSubMenu = useCallback((label) => {
     setExpandedMenus((prev) => ({
       ...prev,
       [label]: !prev[label],
     }));
-  };
+  }, []);
 
   const renderDesktopMenu = (menu) => {
     const hasSubMenu = Array.isArray(menu.subItems);
@@ -310,18 +313,19 @@ function Header() {
 
         {activeMenu === menu.label && (
           <SubMenu>
-            {menu.subItems.map((item) => (
-              <SubMenuItem
-                key={item.label}
-                to={item.to}
-                target={item.to.startsWith("http") ? "_blank" : undefined}
-                rel={
-                  item.to.startsWith("http") ? "noopener noreferrer" : undefined
-                }
-              >
-                {item.label}
-              </SubMenuItem>
-            ))}
+            {menu.subItems.map((item) => {
+              const external = isExternalLink(item.to);
+              return (
+                <SubMenuItem
+                  key={item.label}
+                  to={item.to}
+                  target={external ? "_blank" : undefined}
+                  rel={external ? "noopener noreferrer" : undefined}
+                >
+                  {item.label}
+                </SubMenuItem>
+              );
+            })}
           </SubMenu>
         )}
       </MenuItem>
@@ -353,53 +357,61 @@ function Header() {
         </MobileMenuButton>
         {expandedMenus[menu.label] && (
           <MobileSubMenu>
-            {menu.subItems.map((item) => (
-              <MobileSubMenuItem
-                key={item.label}
-                to={item.to}
-                target={item.to.startsWith("http") ? "_blank" : undefined}
-                rel={
-                  item.to.startsWith("http") ? "noopener noreferrer" : undefined
-                }
-              >
-                {item.label}
-              </MobileSubMenuItem>
-            ))}
+            {menu.subItems.map((item) => {
+              const external = isExternalLink(item.to);
+              return (
+                <MobileSubMenuItem
+                  key={item.label}
+                  to={item.to}
+                  target={external ? "_blank" : undefined}
+                  rel={external ? "noopener noreferrer" : undefined}
+                >
+                  {item.label}
+                </MobileSubMenuItem>
+              );
+            })}
           </MobileSubMenu>
         )}
       </MobileMenuItem>
     );
   };
 
-  useEffect(() => {
+  const handleResize = useCallback(() => {
     const DESKTOP_WIDTH = 1024;
-    const handleResize = () => {
-      const isMobile = window.innerWidth <= DESKTOP_WIDTH;
+    const isMobile = window.innerWidth <= DESKTOP_WIDTH;
 
-      if (isMobile) {
-        setActiveMenu(null);
-      }
+    if (isMobile) {
+      setActiveMenu(null);
+    }
 
-      if (!isMobile) {
-        setIsMobileOpen(false);
-        setExpandedMenus({});
-      }
-    };
+    if (!isMobile) {
+      setIsMobileOpen(false);
+      setExpandedMenus({});
+    }
+  }, []);
 
+  useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, [handleResize]);
+
+  const handleOverlayClick = useCallback(() => {
+    setActiveMenu(null);
+    setIsMobileOpen(false);
+  }, []);
+
+  const handleHamburgerClick = useCallback(() => {
+    setIsMobileOpen(true);
+    setExpandedMenus({});
+  }, []);
+
+  const handleMobileClose = useCallback(() => {
+    setIsMobileOpen(false);
   }, []);
 
   return (
     <>
-      {isOverlayVisible && (
-        <Overlay
-          onClick={() => {
-            setActiveMenu(null);
-            setIsMobileOpen(false);
-          }}
-        />
-      )}
+      {isOverlayVisible && <Overlay onClick={handleOverlayClick} />}
 
       <HeaderContainer transparent={isHeaderTransparent}>
         <Link to="/">
@@ -414,19 +426,14 @@ function Header() {
           <Nav>{menuItems.map((menu) => renderDesktopMenu(menu))}</Nav>
         </NavWrapper>
 
-        <Hamburger
-          onClick={() => {
-            setIsMobileOpen(true);
-            setExpandedMenus({});
-          }}
-        >
+        <Hamburger onClick={handleHamburgerClick}>
           <FiMenu size={24} />
         </Hamburger>
       </HeaderContainer>
 
       {isMobileOpen && (
         <MobileMenu>
-          <MobileClose onClick={() => setIsMobileOpen(false)}>
+          <MobileClose onClick={handleMobileClose}>
             <FiX />
           </MobileClose>
 
