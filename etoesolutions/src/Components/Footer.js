@@ -73,7 +73,9 @@ function Footer() {
       </SpanDiv>
       <SpanDiv className="rightSpan">
         <span className="company">이투이솔루션즈(주)</span>
-        <span>06621 서울시 서초구 강남대로 359, 도씨에빛 2차 1902호</span>
+        <span>
+          06621 서울시 서초구 강남대로 359, 도씨에빛 2차 1901호, 1902호
+        </span>
         <span>TEL: 02) 402-4222 FAX: 070-4134-2216</span>
       </SpanDiv>
     </FooterDiv>
