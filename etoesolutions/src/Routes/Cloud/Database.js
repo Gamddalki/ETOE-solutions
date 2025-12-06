@@ -1,3 +1,4 @@
+import { memo } from "react";
 import styled from "styled-components";
 import BodyWrapper from "../../Components/BodyWrapper";
 import TextBlock from "../../Components/TextBlock";
@@ -87,4 +88,4 @@ function Database() {
   );
 }
 
-export default Database;
+export default memo(Database);

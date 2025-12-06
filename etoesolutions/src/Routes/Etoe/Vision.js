@@ -1,65 +1,66 @@
+import { memo, useMemo } from "react";
 import BodyWrapper from "../../Components/BodyWrapper";
 import CardBoard from "../../Components/CardBoard";
 
+const VISION_CARDS = [
+  {
+    title: "고객의 감동",
+    image: "/img/customer.png",
+    content: (
+      <>
+        <span>
+          <b>상호 이해와 신뢰를 바탕으로 한 회사</b>
+          <br />
+          고객의 성공을 위한 핵심 파트너. 고객의 발전과 비즈니스 성공을 위해
+          투철한 서비스 정신을 바탕으로 고객 감동을 실현하는 기업입니다.
+        </span>
+      </>
+    ),
+  },
+  {
+    title: "최상의 솔루션",
+    image: "/img/bestsolution.png",
+    content: (
+      <>
+        <span>
+          <b>축적된 기술적 자산으로 최상의 컨설팅과 솔루션 제공</b>
+          <br />
+          최고의 전문 인력이 수많은 프로젝트를 통해 쌓은 경험과 지식으로, 최상의
+          시스템 활용과 비즈니스 경쟁력 강화를 위한 컨설팅 및 서비스를
+          제공합니다.
+        </span>
+      </>
+    ),
+  },
+  {
+    title: "빠르고 정확한 서비스",
+    image: "/img/service.png",
+    content: (
+      <>
+        <span>
+          <b>고객 사업의 성공을 위한 비즈니스 파트너</b>
+          <br />
+          최상위급 DB 관리와 컨설팅 서비스 경험은 고객의 다양한 요구에도
+          신속하고 완벽하게 대응할 수 있는 이투이솔루션즈만의 저력입니다.
+          이투이솔루션즈는 고객을 위한 차별화된 서비스로 고객 만족을 이뤄가고
+          있습니다.
+        </span>
+      </>
+    ),
+  },
+];
+
 function Vision() {
-  const visionCards = [
-    {
-      title: "고객의 감동",
-      image: "/img/customer.png",
-      content: (
-        <>
-          <span>
-            <b>상호 이해와 신뢰를 바탕으로 한 회사</b>
-            <br />
-            고객의 성공을 위한 핵심 파트너. 고객의 발전과 비즈니스 성공을 위해
-            투철한 서비스 정신을 바탕으로 고객 감동을 실현하는 기업입니다.
-          </span>
-        </>
-      ),
-    },
-    {
-      title: "최상의 솔루션",
-      image: "/img/bestsolution.png",
-      content: (
-        <>
-          <span>
-            <b>축적된 기술적 자산으로 최상의 컨설팅과 솔루션 제공</b>
-            <br />
-            최고의 전문 인력이 수많은 프로젝트를 통해 쌓은 경험과 지식으로,
-            최상의 시스템 활용과 비즈니스 경쟁력 강화를 위한 컨설팅 및 서비스를
-            제공합니다.
-          </span>
-        </>
-      ),
-    },
-    {
-      title: "빠르고 정확한 서비스",
-      image: "/img/service.png",
-      content: (
-        <>
-          <span>
-            <b>고객 사업의 성공을 위한 비즈니스 파트너</b>
-            <br />
-            최상위급 DB 관리와 컨설팅 서비스 경험은 고객의 다양한 요구에도
-            신속하고 완벽하게 대응할 수 있는 이투이솔루션즈만의 저력입니다.
-            이투이솔루션즈는 고객을 위한 차별화된 서비스로 고객 만족을 이뤄가고
-            있습니다.
-          </span>
-        </>
-      ),
-    },
-  ];
+  const visionCards = useMemo(() => VISION_CARDS, []);
 
   return (
-    <>
-      <BodyWrapper
-        pageTitle="비전"
-        pageSubtitle="지속적인 기술 개발과 변화의 노력으로 IT 기술을 선도하는 기업"
-      >
-        <CardBoard cards={visionCards} />
-      </BodyWrapper>
-    </>
+    <BodyWrapper
+      pageTitle="비전"
+      pageSubtitle="지속적인 기술 개발과 변화의 노력으로 IT 기술을 선도하는 기업"
+    >
+      <CardBoard cards={visionCards} />
+    </BodyWrapper>
   );
 }
 
-export default Vision;
+export default memo(Vision);

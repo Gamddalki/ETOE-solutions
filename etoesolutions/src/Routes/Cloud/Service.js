@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { memo } from "react";
 import BodyWrapper from "../../Components/BodyWrapper";
 import TextBlock from "../../Components/TextBlock";
 import ExternalLinkButton from "../../Components/ExternalLinkButton";
@@ -96,4 +96,4 @@ function Service() {
   );
 }
 
-export default Service;
+export default memo(Service);

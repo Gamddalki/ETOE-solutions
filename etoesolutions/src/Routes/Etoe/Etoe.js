@@ -1,3 +1,4 @@
+import { memo } from "react";
 import styled from "styled-components";
 import BodyWrapper from "../../Components/BodyWrapper";
 import Timeline from "../../Components/Timeline";
@@ -103,4 +104,4 @@ function Etoe() {
   );
 }
 
-export default Etoe;
+export default memo(Etoe);

@@ -1,3 +1,4 @@
+import { useMemo, useCallback } from "react";
 import styled from "styled-components";
 import { useEffect, useRef } from "react";
 import { FaChevronDown } from "react-icons/fa6";
@@ -270,6 +271,53 @@ const OracleSection = styled.section`
   }
 `;
 
+const INTRO_ITEMS = [
+  {
+    icon: "/img/database.png",
+    title: "Database",
+    content:
+      "Oracle Advanced Technical Support (DBMS 설치, 정기점검, 장애처리, 데이터 복구 등)을 체계적이고 안정적으로 지원",
+  },
+  {
+    icon: "/img/databaseperformance.png",
+    title: "Performance Tuning",
+    content:
+      "데이터베이스 성능 진단 및 분석을 통한 고도화 (파티션 및 인덱스 개선, SQL 튜닝 등)와 최적화 설계 제공",
+  },
+  {
+    icon: "/img/dba.png",
+    title: "DBA",
+    content:
+      "전문 DBA의 데이터베이스 관리 및 운영, 모니터링과 더불어 백업 및 복구 전략 수립, 관리 및 운영 지침서 등 문서 제공",
+  },
+  {
+    icon: "/img/datamigration.png",
+    title: "Data Migration",
+    content:
+      "이행 환경 분석 및 전략 수립, 데이터 모델 및 데이터 분석, 매핑 및 검증 항목 정의를 바탕으로 이행/검증 프로그램 개발 및 테스트를 통해 안정적인 마이그레이션 진행",
+  },
+];
+
+const NUM_ITEMS = [
+  {
+    label: "Years",
+    value: 20,
+    desc: "20년 이상 축적된 노하우와 검증된 기술력으로 안정적인 데이터베이스 운영과 혁신적인 솔루션 제공",
+  },
+  {
+    label: "Projects",
+    value: 100,
+    desc: "100개 이상의 프로젝트 수행 경험을 통해 축적된 실전 역량과 맞춤형 최적화 지원",
+  },
+  {
+    label: "Customers",
+    value: 100,
+    desc: "100여 고객사가 신뢰한 안정적인 서비스와 지속적인 파트너십으로 장기적 지원",
+  },
+];
+
+const NUM_TARGETS = [20, 100, 100];
+
 function Home() {
   const heroRef = useRef(null);
   const indicatorRef = useRef(null);
@@ -347,14 +395,13 @@ function Home() {
         stagger: 0.15,
       });
 
-      const targets = [20, 100, 100];
       if (numberRefs.current && numberRefs.current.length) {
         ScrollTrigger.create({
           trigger: numSectionRef.current,
           start: "top 70%",
           once: true,
           onEnter: () => {
-            targets.forEach((target, index) => {
+            NUM_TARGETS.forEach((target, index) => {
               const numberEl = numberRefs.current[index];
               const plusEl = plusRefs.current[index];
               const counter = { val: 0 };
@@ -390,7 +437,10 @@ function Home() {
     };
   }, []);
 
-  const handleScrollDown = () => {};
+  const handleScrollDown = useCallback(() => {}, []);
+
+  const introItems = useMemo(() => INTRO_ITEMS, []);
+  const numItems = useMemo(() => NUM_ITEMS, []);
 
   // reset ref arrays before rendering
   cardRefs.current = [];
@@ -428,32 +478,7 @@ function Home() {
 
       <IntroSection ref={introSectionRef} className="intro-section">
         <IntroGrid>
-          {[
-            {
-              icon: "/img/database.png",
-              title: "Database",
-              content:
-                "Oracle Advanced Technical Support (DBMS 설치, 정기점검, 장애처리, 데이터 복구 등)을 체계적이고 안정적으로 지원",
-            },
-            {
-              icon: "/img/databaseperformance.png",
-              title: "Performance Tuning",
-              content:
-                "데이터베이스 성능 진단 및 분석을 통한 고도화 (파티션 및 인덱스 개선, SQL 튜닝 등)와 최적화 설계 제공",
-            },
-            {
-              icon: "/img/dba.png",
-              title: "DBA",
-              content:
-                "전문 DBA의 데이터베이스 관리 및 운영, 모니터링과 더불어 백업 및 복구 전략 수립, 관리 및 운영 지침서 등 문서 제공",
-            },
-            {
-              icon: "/img/datamigration.png",
-              title: "Data Migration",
-              content:
-                "이행 환경 분석 및 전략 수립, 데이터 모델 및 데이터 분석, 매핑 및 검증 항목 정의를 바탕으로 이행/검증 프로그램 개발 및 테스트를 통해 안정적인 마이그레이션 진행",
-            },
-          ].map((item) => (
+          {introItems.map((item) => (
             <IntroCard key={item.title} className="intro-card">
               <IntroIcon src={item.icon} alt={item.title} />
               <IntroTitle>{item.title}</IntroTitle>
@@ -465,23 +490,7 @@ function Home() {
 
       <NumSection ref={numSectionRef}>
         <NumGrid>
-          {[
-            {
-              label: "Years",
-              value: 20,
-              desc: "20년 이상 축적된 노하우와 검증된 기술력으로 안정적인 데이터베이스 운영과 혁신적인 솔루션 제공",
-            },
-            {
-              label: "Projects",
-              value: 100,
-              desc: "100개 이상의 프로젝트 수행 경험을 통해 축적된 실전 역량과 맞춤형 최적화 지원",
-            },
-            {
-              label: "Customers",
-              value: 100,
-              desc: "100여 고객사가 신뢰한 안정적인 서비스와 지속적인 파트너십으로 장기적 지원",
-            },
-          ].map((item, idx) => (
+          {numItems.map((item, idx) => (
             <NumCard
               key={item.label}
               ref={(el) => (cardRefs.current[idx] = el)}
