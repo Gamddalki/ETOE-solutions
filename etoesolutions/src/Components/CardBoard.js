@@ -36,7 +36,7 @@ const Card = styled.div`
 
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
     padding: 20px;
-    gap: 16px;
+    gap: 15px;
   }
 `;
 
@@ -50,33 +50,28 @@ const CardContent = styled.div`
 const CardHeader = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 15px;
   flex-shrink: 0;
   align-items: center;
+`;
 
-  .card-subtitle {
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: ${(props) => props.theme.colors.overlay};
-    line-height: 1.2;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
+const CardSubtitle = styled.span`
+  font-size: 15px;
+  font-weight: 500;
+  color: ${(props) => props.theme.colors.overlay};
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+`;
 
-  .card-title {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: ${(props) => props.theme.colors.primary};
-    margin: 0;
-    line-height: 1.4;
+const CardTitle = styled.h3`
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: ${(props) => props.theme.colors.primary};
 
-    @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
-      font-size: 1.25rem;
-    }
-
-    @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
-      font-size: 1.15rem;
-    }
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    font-size: 20px;
   }
 `;
 
@@ -104,11 +99,12 @@ const CardIcon = styled.div`
 const CardText = styled.div`
   color: ${(props) => props.theme.colors.headerSubText};
   flex: 1;
+  font-size: 18px;
 
   span {
     display: block;
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-size: inherit;
+    line-height: 1.7;
     margin-bottom: 10px;
 
     b {
@@ -118,8 +114,7 @@ const CardText = styled.div`
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 15px;
   }
 `;
 
@@ -137,10 +132,8 @@ function CardBoard({ cards }) {
           <Card key={cardKey}>
             <CardContent>
               <CardHeader>
-                {card.subtitle && (
-                  <div className="card-subtitle">{card.subtitle}</div>
-                )}
-                <div className="card-title">{card.title}</div>
+                {card.subtitle && <CardSubtitle>{card.subtitle}</CardSubtitle>}
+                <CardTitle>{card.title}</CardTitle>
                 {card.image && <CardIcon image={card.image} />}
               </CardHeader>
               <CardText>{card.content}</CardText>

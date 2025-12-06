@@ -92,10 +92,6 @@ const TimelineItem = styled.div`
     padding-left: 1.5rem;
     min-height: auto;
   }
-
-  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
-    margin: 0.7rem 0;
-  }
 `;
 
 const TimelineImage = styled.div`
@@ -180,7 +176,7 @@ const TimelineContent = styled.div`
     font-size: ${(props) => (props.$horizontal ? "0.85rem" : "1rem")};
     color: ${(props) => props.theme.colors.secondary};
     font-weight: 500;
-    margin-bottom: ${(props) => (props.$horizontal ? "0" : "0.3rem")};
+    margin-bottom: ${(props) => (props.$horizontal ? "0" : "0.2rem")};
     ${(props) => (props.$horizontal ? "letter-spacing: 0.06em;" : "")}
   }
 
@@ -223,6 +219,7 @@ const TimelineContent = styled.div`
     gap: 5px;
     .timeline-title {
       font-size: 1rem;
+      line-height: 1.5;
     }
   }
 `;

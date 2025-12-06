@@ -21,25 +21,27 @@ const PageTitle = styled.div`
   @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     margin-bottom: 10px;
   }
+
   h2 {
     font-weight: 600;
-    font-size: 45px;
+    font-size: 40px;
     margin-bottom: 7px;
     @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
-      font-size: 40px;
-    }
-    @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
       font-size: 35px;
     }
+    @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+      font-size: 30px;
+    }
   }
+
   h4 {
     font-weight: 500;
     font-size: 30px;
     @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
-      font-size: 27px;
+      font-size: 25px;
     }
     @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
-      font-size: 25px;
+      font-size: 20px;
     }
   }
 `;
@@ -56,9 +58,10 @@ const PageContents = styled.div`
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
     gap: 15px;
   }
+
   span {
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.7;
     text-align: justify;
     @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
       font-size: 15px;

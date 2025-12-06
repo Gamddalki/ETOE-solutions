@@ -18,7 +18,7 @@ const FooterDiv = styled.div`
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
     flex-direction: column;
     align-items: flex-start;
-    padding: 50px 30px;
+    padding: 50px 30px 30px 30px;
   }
 `;
 
@@ -61,11 +61,6 @@ const SpanDiv = styled.div`
       span {
         text-align: left;
       }
-    }
-  }
-  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
-    &.rightSpan {
-      margin-top: 15px;
     }
   }
 `;

@@ -57,26 +57,31 @@ const ImageWrap = styled.div`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 5px;
 `;
 
 const Subtitle = styled.span`
-  font-size: 0.8rem !important;
   color: ${(props) => props.theme.colors.overlay};
-  line-height: 1.1 !important;
+  font-size: 15px !important;
+  line-height: 1.2 !important;
   text-align: left !important;
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    font-size: 13px !important;
+  }
 `;
 
 const Title = styled.h4`
   margin: 0;
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: ${(props) => (props.$hasSubtitle ? "22px" : "18px")} !important;
+  font-weight: 500 !important;
   color: ${(props) => props.theme.colors.primary};
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    font-size: ${(props) => (props.$hasSubtitle ? "18px" : "15px")} !important;
+  }
 `;
 
 const Body = styled.div`
-  font-size: 0.95rem;
-  line-height: 1.4;
+  font-size: 15px;
+  line-height: 1.5;
   color: ${(props) => props.theme.colors.headerSubText};
 
   a {
@@ -96,17 +101,16 @@ function HighlightsGrid({ items, columns = 2 }) {
     <Grid $columns={columns}>
       {items.map((item) => {
         const IconComponent = item.icon;
+        const hasImage = !!item.image;
+        const hasIcon = !!IconComponent;
+
         return (
-          <Card
-            key={item.title}
-            $hasImage={Boolean(item.image)}
-            $hasIcon={Boolean(IconComponent)}
-          >
-            {item.image ? (
+          <Card key={item.title} $hasImage={hasImage}>
+            {hasImage ? (
               <ImageWrap>
                 <img src={item.image} alt={item.imageAlt || item.title} />
               </ImageWrap>
-            ) : IconComponent ? (
+            ) : hasIcon ? (
               <IconWrap>
                 <IconComponent size={item.iconSize || 22} />
               </IconWrap>
@@ -114,7 +118,7 @@ function HighlightsGrid({ items, columns = 2 }) {
 
             <Content>
               {item.subtitle && <Subtitle>{item.subtitle}</Subtitle>}
-              <Title>{item.title}</Title>
+              <Title $hasSubtitle={!!item.subtitle}>{item.title}</Title>
               {item.description && <Body>{item.description}</Body>}
             </Content>
           </Card>
