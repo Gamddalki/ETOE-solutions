@@ -84,7 +84,7 @@ function Etoe() {
     >
       <div>
         <span>
-          이투이솔루션즈는 데이터 매니지먼트(Data Management), 데이터
+          이투이솔루션즈(주)는 데이터 매니지먼트(Data Management), 데이터
           아키텍처(DA, Data Architecture), 데이터 웨어하우스(EDW, Enterprise
           Data Warehouse), 성능 진단 및 고도화 컨설팅 분야에 있어서 최고의 전문
           인력을 갖추고 있으며, 수많은 프로젝트를 통해 쌓은 경험과 지식으로
